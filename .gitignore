@@ -1,0 +1,24 @@
+# Local IDE and Python environments
+.idea/
+**/.idea/
+.venv/
+**/.venv/
+__pycache__/
+**/__pycache__/
+.pytest_cache/
+**/.pytest_cache/
+*.py[cod]
+
+# Local Codex configuration
+.agents/
+.codex/
+
+# Secrets and machine-local configuration
+.env
+.env.*
+!.env.example
+*.private.md
+
+# OS files
+.DS_Store
+Thumbs.db
