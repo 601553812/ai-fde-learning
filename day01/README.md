@@ -23,10 +23,10 @@ Java 与 Python 对照理解：
 
 ## 0～15 分钟：确认环境
 
-打开 PowerShell，依次执行：
+先让终端位于仓库根目录，再依次执行：
 
 ```powershell
-cd 'C:\path\to\ai-fde-learning\day01'
+cd .\day01
 python --version
 python .\day01_requirement_parser.py
 ```

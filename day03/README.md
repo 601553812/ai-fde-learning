@@ -42,12 +42,17 @@ RequirementItem(category="functions", content="CSV出力")
 
 ## 0～15 分钟：确认统一环境
 
-本项目从 Day 3 起统一使用仓库根目录的 `.venv`：
+本项目从 Day 3 起统一使用仓库根目录的 `.venv`。下面的命令假设终端已经位于仓库根目录，请不要把 `C:\path\to\...` 一类示例路径原样复制到终端：
 
 ```powershell
-cd 'C:\path\to\ai-fde-learning'
 .\.venv\Scripts\python.exe --version
 .\.venv\Scripts\python.exe -m pytest --version
+```
+
+如果使用 CMD 或 Cmder，请用双引号进入你自己的仓库路径；PowerShell 不需要 `/d`：
+
+```text
+cd /d "你的仓库绝对路径"
 ```
 
 本机当前已准备好：Python 3.11.15、pytest 9.1.1。

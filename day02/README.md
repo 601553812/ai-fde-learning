@@ -51,10 +51,10 @@ tuple 与 list 的关键区别：
 - list 常用于保存数量会增加或减少的同类数据，例如多条功能。
 - tuple 创建后不能修改其中的元素；list 可以 `append()`。
 
-在 `day02_notes.md` 中先回答前 3 题，然后运行：
+在 `day02_notes.md` 中先回答前 3 题。让终端位于仓库根目录，然后运行：
 
 ```powershell
-cd 'C:\path\to\ai-fde-learning\day02'
+cd .\day02
 python .\verify_day02.py
 ```
 
