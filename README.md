@@ -10,6 +10,7 @@
 - [学习进度](./学习进度.md)
 - [Day 1：Python 基础与需求解析](./day01/README.md)
 - [Day 2：tuple、重构与异常处理](./day02/README.md)
+- [Day 3：dataclass 与 pytest](./day03/README.md)
 
 ## 当前技术主线
 
@@ -34,3 +35,10 @@ Python
 - Python 3.11
 - Windows / PowerShell 示例命令
 - 第三方依赖将在实际需要时通过项目依赖文件记录
+
+首次运行：
+
+```powershell
+py -3.11 -m venv .venv
+.\.venv\Scripts\python.exe -m pip install -r .\requirements-dev.txt
+```
