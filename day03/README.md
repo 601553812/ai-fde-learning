@@ -153,13 +153,23 @@ class RequirementItem:
 
 ## 105～115 分钟：手动运行 CLI
 
+PowerShell：
+
 ```powershell
-.\.venv\Scripts\python.exe .\day03\day03_requirement_parser.py `
-  .\day03\sample_requirement.txt `
-  .\day03\result.json
+.\.venv\Scripts\python.exe .\day03\day03_requirement_parser.py .\day03\sample_requirement.txt .\day03\result.json
 $LASTEXITCODE
 Get-Content -Raw -Encoding utf8 .\day03\result.json
 ```
+
+CMD / Cmder：
+
+```bat
+.\.venv\Scripts\python.exe .\day03\day03_requirement_parser.py .\day03\sample_requirement.txt .\day03\result.json
+echo %ERRORLEVEL%
+type .\day03\result.json
+```
+
+三个路径必须和 Python 命令写在同一行；不要在 CMD / Cmder 中使用 PowerShell 的反引号、`$LASTEXITCODE` 或 `Get-Content`。
 
 预期结果：
 
