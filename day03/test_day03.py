@@ -6,6 +6,7 @@ from dataclasses import FrozenInstanceError
 
 import pytest
 
+from day03.day03_requirement_parser import empty_result
 from day03_requirement_parser import (
     RequirementItem,
     classify_line,
@@ -56,20 +57,36 @@ def test_multiple_lines_are_parsed() -> None:
 
 
 def test_content_can_contain_another_colon() -> None:
-    # TODO 4: 验证输入「確認事項: URLはhttps://example.comでよいか」不会截断。
-    pytest.fail("TODO 4: write this test")
+    assert classify_line("確認事項: URLはhttps://example.comでよいか").category == "questions"
+    assert classify_line("確認事項: URLはhttps://example.comでよいか").content == "URLはhttps://example.comでよいか"
 
 
 def test_known_label_without_content_becomes_unknown() -> None:
-    # TODO 5: 验证输入「機能：」会作为 unknown 原样保留。
-    pytest.fail("TODO 5: write this test")
+    assert classify_line("機能：").category == "unknown"
+    assert classify_line("機能：").content == "機能："
 
 
 def test_validation_reports_missing_functions() -> None:
-    # TODO 6: empty_result 中只有 acceptance_criteria 时，应报告缺少 functions。
-    pytest.fail("TODO 6: write this test")
+    result = empty_result()
+    result["acceptance_criteria"].append("受入条件あり")
+    assert validate_result(result) == ["At least one function is required"]
+
 
 
 def test_validation_reports_missing_acceptance_criteria() -> None:
-    # TODO 7: empty_result 中只有 functions 时，应报告缺少 acceptance_criteria。
-    pytest.fail("TODO 7: write this test")
+    result = empty_result()
+    result["functions"].append("機能あり")
+    assert validate_result(result) == ["At least one acceptance criterion is required"]
+
+
+def test_validation_reports_both_required_sections_missing() -> None:
+    result = empty_result()
+    assert "At least one function is required" in validate_result(result)
+    assert "At least one acceptance criterion is required" in validate_result(result)
+
+
+def test_known_label_without_separator_becomes_unknown() -> None:
+    assert classify_line("機能 CSV出力") == RequirementItem(
+        category="unknown",
+        content="機能 CSV出力",
+    )

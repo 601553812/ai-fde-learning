@@ -37,23 +37,45 @@ def empty_result() -> dict[str, list[str]]:
 
 def classify_line(line: str) -> RequirementItem | None:
     """Classify one line into a RequirementItem."""
-    # TODO 1: 处理空行、注释、两种冒号、空内容和未知行。
-    # 内容中再次出现冒号时，必须保留后半部分。
-    raise NotImplementedError("TODO 1: implement classify_line")
+    line = line.strip()
+    if not line or line.startswith("#"):
+        return None
+    for category in PREFIX_TO_CATEGORY.keys():
+        if line.startswith(category):
+            if line.find(":") != -1 :
+                content = line.split(":",1)[1].strip()
+            elif line.find("：") != -1:
+                content = line.split("：",1)[1].strip()
+            else:
+                return RequirementItem("unknown",line)
+            if content == "":
+                return RequirementItem("unknown",line)
+            return RequirementItem(PREFIX_TO_CATEGORY[category],content)
+        else :
+            continue
+    return RequirementItem("unknown",line)
 
 
 def parse_requirement(text: str) -> dict[str, list[str]]:
     """Parse all lines using RequirementItem named fields."""
     result = empty_result()
 
-    # TODO 2: 使用 item is None、item.category 和 item.content。
-    raise NotImplementedError("TODO 2: implement parse_requirement")
-
+    for line in text.splitlines():
+        item = classify_line(line)
+        if item is None:
+            continue
+        else:
+            result[item.category].append(item.content)
+    return result
 
 def validate_result(result: dict[str, list[str]]) -> list[str]:
     """Return validation errors for missing required sections."""
-    # TODO 3: functions 和 acceptance_criteria 至少各有一项。
-    raise NotImplementedError("TODO 3: implement validate_result")
+    errors = []
+    if not result["functions"]:
+        errors.append("At least one function is required")
+    if not result["acceptance_criteria"]:
+        errors.append("At least one acceptance criterion is required")
+    return errors
 
 
 def run(input_path: Path, output_path: Path) -> int:
