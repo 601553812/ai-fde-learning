@@ -11,6 +11,7 @@
 - [Day 1：Python 基础与需求解析](./day01/README.md)
 - [Day 2：tuple、重构与异常处理](./day02/README.md)
 - [Day 3：dataclass 与 pytest](./day03/README.md)
+- [Day 4：Python 模块、package 与统一 import](./day04/README.md)
 
 ## 当前技术主线
 
