@@ -26,11 +26,34 @@ def empty_result() -> dict[str, list[str]]:
 
 def classify_line(line: str) -> RequirementItem | None:
     """Classify one requirement line."""
-    # TODO 2: 从 Day 3 迁移已经通过测试的单行分类逻辑。
-    raise NotImplementedError("TODO 2: implement classify_line")
+    """Classify one line into a RequirementItem."""
+    line = line.strip()
+    if not line or line.startswith("#"):
+        return None
+    for category in PREFIX_TO_CATEGORY.keys():
+        if line.startswith(category):
+            if line.find(":") != -1:
+                content = line.split(":", 1)[1].strip()
+            elif line.find("：") != -1:
+                content = line.split("：", 1)[1].strip()
+            else:
+                return RequirementItem("unknown", line)
+            if content == "":
+                return RequirementItem("unknown", line)
+            return RequirementItem(PREFIX_TO_CATEGORY[category], content)
+        else:
+            continue
+    return RequirementItem("unknown", line)
 
 
 def parse_requirement(text: str) -> dict[str, list[str]]:
     """Parse all requirement lines."""
-    # TODO 3: 使用 classify_line() 和 RequirementItem 的具名字段。
-    raise NotImplementedError("TODO 3: implement parse_requirement")
+    result = empty_result()
+
+    for line in text.splitlines():
+        item = classify_line(line)
+        if item is None:
+            continue
+        else:
+            result[item.category].append(item.content)
+    return result

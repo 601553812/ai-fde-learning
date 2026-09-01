@@ -5,5 +5,9 @@ from __future__ import annotations
 
 def validate_result(result: dict[str, list[str]]) -> list[str]:
     """Return every missing-required-section error."""
-    # TODO 4: functions 与 acceptance_criteria 分别独立检查。
-    raise NotImplementedError("TODO 4: implement validate_result")
+    errors = []
+    if not result["functions"]:
+        errors.append("At least one function is required")
+    if not result["acceptance_criteria"]:
+        errors.append("At least one acceptance criterion is required")
+    return errors
