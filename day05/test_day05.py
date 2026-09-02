@@ -127,11 +127,20 @@ def test_run_writes_valid_json_for_valid_input(tmp_path: Path) -> None:
 
 def test_run_returns_one_for_missing_input(tmp_path: Path) -> None:
     # TODO 5: 使用 tmp_path 创建不存在的输入路径和输出路径。
-    # 断言 run() 返回 1，且输出文件不存在。
-    pytest.fail("TODO 5: write this test")
+    output_path = tmp_path / "output.json"
+    assert run(tmp_path / "input.txt", tmp_path / "output.json") == 1
+    assert not output_path.exists()
+
 
 
 def test_run_returns_two_for_validation_errors(tmp_path: Path) -> None:
-    # TODO 6: 输入文件只写入一条未知行。
-    # 断言 run() 返回 2、输出存在，并包含两条 validation_errors。
-    pytest.fail("TODO 6: write this test")
+    input_path = tmp_path / "input.txt"
+    input_path.write_text("12345",encoding="utf-8")
+    output_path = tmp_path / "output.json"
+    assert run(tmp_path / "input.txt", tmp_path / "output.json") == 2
+    assert output_path.exists()
+    path = tmp_path / "output.json"
+    payload = json.loads(path.read_text(encoding="utf-8"))
+    validation_errors = payload["validation_errors"]
+    error_list = list(validation_errors)
+    assert len(error_list) == 2
