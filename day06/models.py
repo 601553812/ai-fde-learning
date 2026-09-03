@@ -18,13 +18,19 @@ class RequirementItem:
 
 class RequirementData(BaseModel):
     """Validated collections produced by the text parser."""
-
-    # TODO 1: 禁止未知字段，并定义五个 list[str] 字段。
+    functions:list[str] = Field(default_factory=list)
+    acceptance_criteria: list[str] = Field(default_factory=list)
+    risks: list[str] = Field(default_factory=list)
+    questions: list[str] = Field(default_factory=list)
+    unknown: list[str] = Field(default_factory=list)
+    model_config = ConfigDict(extra="forbid")
     pass
 
 
 class AnalysisOutput(BaseModel):
     """Versioned output schema written by the CLI."""
-
-    # TODO 2: 定义 schema_version、requirements 和 validation_errors。
+    schema_version:Literal["1.0"] = "1.0"
+    requirements:RequirementData
+    validation_errors:list[str] = Field(default_factory=list)
+    model_config = ConfigDict(extra="forbid")
     pass

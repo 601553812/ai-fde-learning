@@ -35,15 +35,100 @@ Python 运行时不会仅因为这条标注就自动拒绝错误数据。Pydanti
 - 正常输入、文件错误、业务校验失败继续返回 `0 / 1 / 2`。
 - 正常输入和业务校验失败仍会生成可读的 UTF-8 JSON。
 
-## 0～10 分钟：复习 Day 5 错题
+## 开始前：今天只学这 7 个知识点
 
-不看笔记回答：
+不需要先阅读整份官方文档。Day 6 只使用下面这些内容，其他 Pydantic API 暂时不学。
 
-1. 为什么多异常捕获使用 `(ErrorA, ErrorB)`，不能使用 `ErrorA or ErrorB`？
-2. 为什么 package 中的 CLI 推荐使用 `python -m day06.cli`？
-3. `WARNING` 和 `ERROR` 在当前业务中的区别是什么？
+### 1. `BaseModel` 是什么
 
-## 10～20 分钟：安装并确认依赖
+`BaseModel` 可以先理解为：
+
+```text
+Java DTO + 构造数据时的类型检查 + JSON 序列化
+```
+
+定义模型时继承它：
+
+```python
+from pydantic import BaseModel
+
+
+class User(BaseModel):
+    name: str
+    age: int
+```
+
+`name` 和 `age` 是模型允许的数据字段。
+
+### 2. 必填字段和默认字段
+
+没有默认值的字段必须提供，有默认值的字段可以省略：
+
+```python
+name: str
+schema_version: str = "1.0"
+```
+
+### 3. list 默认值使用 `default_factory`
+
+```python
+from pydantic import Field
+
+tags: list[str] = Field(default_factory=list)
+```
+
+它可以先类比为 Java 每次创建 DTO 时都执行 `this.tags = new ArrayList<>()`，因此每个模型实例都有自己的 list。
+
+### 4. `model_validate()`：把外部数据变成模型
+
+```python
+user = User.model_validate({"name": "田中", "age": 30})
+```
+
+成功后得到 `User` 对象，可以使用 `user.name`。数据无法满足字段类型时会抛出 `ValidationError`。
+
+### 5. `ConfigDict(extra="forbid")`：拒绝未知字段
+
+```python
+class User(BaseModel):
+    model_config = ConfigDict(extra="forbid")
+    name: str
+```
+
+如果输入错写成 `user_name`，程序会明确报错，而不是悄悄忽略它。
+
+### 6. `Literal`：字段只能是固定值
+
+```python
+schema_version: Literal["1.0"] = "1.0"
+```
+
+这表示该字段只允许字符串 `"1.0"`，适合固定输出格式的版本号。
+
+### 7. 模型如何输出
+
+```python
+model.model_dump()       # 返回 Python dict
+model.model_dump_json()  # 返回 JSON 字符串
+```
+
+本题需要写 JSON 文件，所以使用 `model_dump_json(indent=2)`。
+
+### Java 对照速查
+
+| Pydantic | 可以先类比为 |
+|---|---|
+| `BaseModel` | 带校验和序列化能力的 DTO |
+| 字段类型标注 | DTO 字段类型 |
+| `Field(default_factory=list)` | 每次构造时 `new ArrayList<>()` |
+| `model_validate(dict)` | 把 Map 绑定并校验成 DTO |
+| `ValidationError` | 数据绑定或字段校验失败 |
+| `model_dump()` | DTO 转 Map |
+| `model_dump_json()` | DTO 序列化为 JSON 字符串 |
+
+今天不学习自定义 validator、alias、computed field、JSON Schema 定制、Settings 或 strict mode；看到这些名词先跳过。
+
+## 0～10 分钟：确认依赖
 
 从仓库根目录运行：
 
@@ -54,7 +139,7 @@ Python 运行时不会仅因为这条标注就自动拒绝错误数据。Pydanti
 
 Day 6 使用 Pydantic 2，因此序列化方法是 `model_dump()` / `model_dump_json()`，不是旧版示例中的 `dict()` / `json()`。
 
-## 20～50 分钟：完成 TODO 1 和 TODO 2
+## 10～45 分钟：完成 TODO 1 和 TODO 2
 
 ### TODO 1：`RequirementData`
 
@@ -84,7 +169,7 @@ Day 6 使用 Pydantic 2，因此序列化方法是 `model_dump()` / `model_dump_
 - Pydantic：检查 JSON 的结构和字段类型。
 - `validate_result()`：检查业务上是否至少有一条功能和验收条件。
 
-## 50～70 分钟：完成 TODO 5 和 TODO 6
+## 45～65 分钟：完成 TODO 5 和 TODO 6
 
 在 `test_day06.py` 中补完两个测试：
 
@@ -99,7 +184,7 @@ Day 6 使用 Pydantic 2，因此序列化方法是 `model_dump()` / `model_dump_
 
 初始脚手架预计为 `18 passed, 7 failed`；完成后应为 `25 passed`。
 
-## 70～95 分钟：完成 TODO 3 和 TODO 4
+## 65～95 分钟：完成 TODO 3 和 TODO 4
 
 ### TODO 3：`build_output()`
 

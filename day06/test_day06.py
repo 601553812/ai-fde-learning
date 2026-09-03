@@ -35,13 +35,20 @@ def test_requirement_data_accepts_parser_result_and_adds_defaults() -> None:
 
 
 def test_requirement_data_defaults_are_independent() -> None:
-    # TODO 5: 创建两个模型，只修改第一个的 functions，再检查第二个。
-    pytest.fail("TODO 5: test independent default lists")
+    model_1 = RequirementData()
+    model_2 = RequirementData()
+    model_1.functions.append("登録")
+    assert not model_2.functions
 
 
 def test_requirement_data_rejects_wrong_field_type() -> None:
-    # TODO 6: 使用 pytest.raises(ValidationError) 检查字符串不能替代 list。
-    pytest.fail("TODO 6: test Pydantic ValidationError")
+
+    with pytest.raises(ValidationError):
+        model = RequirementData.model_validate({
+            "functions" : "123"
+        })
+
+
 
 
 def test_requirement_data_forbids_unknown_fields() -> None:

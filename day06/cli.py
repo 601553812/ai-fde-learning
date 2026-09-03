@@ -37,8 +37,10 @@ def build_output(
     validation_errors: list[str],
 ) -> AnalysisOutput:
     """Validate parser data and build the versioned output model."""
-    # TODO 3: 使用 model_validate() 和 AnalysisOutput 创建返回值。
-    raise NotImplementedError("TODO 3: implement build_output")
+    model_requirements = RequirementData.model_validate(requirements)
+    analysis = AnalysisOutput.model_validate({"requirements": model_requirements,"validation_errors": validation_errors})
+    return analysis
+
 
 
 def run(input_path: Path, output_path: Path) -> int:
@@ -56,9 +58,8 @@ def run(input_path: Path, output_path: Path) -> int:
         LOGGER.warning("%s", error)
 
     output = build_output(requirements, validation_errors)
-
-    # TODO 4: 使用 output.model_dump_json(indent=2) 写入 UTF-8 JSON。
-    output_path.write_text("{}", encoding="utf-8")
+    json_str = output.model_dump_json(indent=2)
+    output_path.write_text(json_str, "utf-8")
     LOGGER.info("Created: %s", output_path)
     return 0 if not validation_errors else 2
 
