@@ -13,6 +13,7 @@
 - [Day 3：dataclass 与 pytest](./day03/README.md)
 - [Day 4：Python 模块、package 与统一 import](./day04/README.md)
 - [Day 5：argparse 与 logging](./day05/README.md)
+- [Day 6：Pydantic 数据模型与运行时校验](./day06/README.md)
 
 ## 当前技术主线
 

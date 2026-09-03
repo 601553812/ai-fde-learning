@@ -1,1 +1,2 @@
 pytest>=8.0
+pydantic>=2.12,<3.0
