@@ -53,13 +53,26 @@ def test_requirement_api_error_inherits_runtime_error() -> None:
 
 
 def test_fetch_requirement_uses_timeout_and_returns_model(monkeypatch: pytest.MonkeyPatch) -> None:
-    # TODO 4: 用 FakeResponse 和 monkeypatch 模拟成功响应，并检查 URL、timeout 和结果。
-    pytest.fail("TODO 4: test successful HTTP JSON response")
+    response = FakeResponse(payload=VALID_PAYLOAD)
+
+    def fake_get(url:str,timeout: float) -> FakeResponse:
+        assert url == "https://example.invalid/requirements"
+        assert timeout == 3.0
+        return response
+
+    monkeypatch.setattr("day07.api_client.requests.get", fake_get)
+
+    result = fetch_requirement("https://example.invalid/requirements",timeout_seconds=3.0)
+    assert isinstance(result, RequirementData)
+    assert result.functions == ["ユーザー登録"]
 
 
 def test_fetch_requirement_converts_timeout(monkeypatch: pytest.MonkeyPatch) -> None:
-    # TODO 5: 让假的 requests.get 抛出 requests.Timeout，并检查 RequirementApiError。
-    pytest.fail("TODO 5: test timeout conversion")
+    def fake_get(url:str,timeout: float) -> FakeResponse:
+        raise requests.Timeout
+    monkeypatch.setattr("day07.api_client.requests.get", fake_get)
+    with pytest.raises(RequirementApiError):
+        fetch_requirement("https://example.invalid/requirements")
 
 
 def test_fetch_requirement_converts_http_error(monkeypatch: pytest.MonkeyPatch) -> None:
@@ -83,8 +96,11 @@ def test_fetch_requirement_converts_invalid_json(monkeypatch: pytest.MonkeyPatch
 
 
 def test_fetch_requirement_converts_schema_error(monkeypatch: pytest.MonkeyPatch) -> None:
-    # TODO 6: 返回 functions 类型错误的 JSON，并检查 RequirementApiError。
-    pytest.fail("TODO 6: test Pydantic schema error conversion")
+    response = FakeResponse(payload={"functions":"not-a-list"})
+    monkeypatch.setattr("day07.api_client.requests.get", lambda url, timeout: response)
+    with pytest.raises(RequirementApiError):
+       fetch_requirement(
+           "https://example.invalid/requirements" )
 
 
 def test_requirement_api_error_keeps_original_cause(monkeypatch: pytest.MonkeyPatch) -> None:
