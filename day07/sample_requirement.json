@@ -1,0 +1,11 @@
+{
+  "functions": [
+    "ユーザーがメールアドレスで登録できる"
+  ],
+  "acceptance_criteria": [
+    "登録成功時にユーザーIDを返す"
+  ],
+  "risks": [],
+  "questions": [],
+  "unknown": []
+}
