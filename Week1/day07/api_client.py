@@ -5,7 +5,7 @@ from __future__ import annotations
 import requests
 from pydantic import ValidationError
 
-from day06.models import RequirementData
+from Week1.day06.models import RequirementData
 
 
 class RequirementApiError(RuntimeError):

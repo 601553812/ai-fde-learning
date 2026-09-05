@@ -115,7 +115,7 @@ class RequirementItem:
 ## 65～85 分钟：先运行已有测试
 
 ```powershell
-.\.venv\Scripts\python.exe -m pytest .\day03\test_day03.py -q
+.\.venv\Scripts\python.exe -m pytest .\Week1\day03\test_day03.py -q
 ```
 
 起始代码会失败，这是正常状态。只处理 pytest 显示的第一项错误。
@@ -156,17 +156,17 @@ class RequirementItem:
 PowerShell：
 
 ```powershell
-.\.venv\Scripts\python.exe .\day03\day03_requirement_parser.py .\day03\sample_requirement.txt .\day03\result.json
+.\.venv\Scripts\python.exe .\Week1\day03\day03_requirement_parser.py .\Week1\day03\sample_requirement.txt .\Week1\day03\result.json
 $LASTEXITCODE
-Get-Content -Raw -Encoding utf8 .\day03\result.json
+Get-Content -Raw -Encoding utf8 .\Week1\day03\result.json
 ```
 
 CMD / Cmder：
 
 ```bat
-.\.venv\Scripts\python.exe .\day03\day03_requirement_parser.py .\day03\sample_requirement.txt .\day03\result.json
+.\.venv\Scripts\python.exe .\Week1\day03\day03_requirement_parser.py .\Week1\day03\sample_requirement.txt .\Week1\day03\result.json
 echo %ERRORLEVEL%
-type .\day03\result.json
+type .\Week1\day03\result.json
 ```
 
 三个路径必须和 Python 命令写在同一行；不要在 CMD / Cmder 中使用 PowerShell 的反引号、`$LASTEXITCODE` 或 `Get-Content`。

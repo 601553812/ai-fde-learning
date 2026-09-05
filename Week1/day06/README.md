@@ -179,7 +179,7 @@ Day 6 使用 Pydantic 2，因此序列化方法是 `model_dump()` / `model_dump_
 先运行：
 
 ```powershell
-.\.venv\Scripts\python.exe -m pytest .\day05\test_day05.py .\day06\test_day06.py -q
+.\.venv\Scripts\python.exe -m pytest .\Week1\day05\test_day05.py .\Week1\day06\test_day06.py -q
 ```
 
 初始脚手架预计为 `18 passed, 7 failed`；完成后应为 `25 passed`。
@@ -203,13 +203,13 @@ Day 6 使用 Pydantic 2，因此序列化方法是 `model_dump()` / `model_dump_
 运行全部 25 项测试：
 
 ```powershell
-.\.venv\Scripts\python.exe -m pytest .\day05\test_day05.py .\day06\test_day06.py -q
+.\.venv\Scripts\python.exe -m pytest .\Week1\day05\test_day05.py .\Week1\day06\test_day06.py -q
 ```
 
 手动运行：
 
 ```powershell
-.\.venv\Scripts\python.exe -m day06.cli .\day06\sample_requirement.txt .\day06\result.json --verbose
+.\.venv\Scripts\python.exe -m Week1.day06.cli .\Week1\day06\sample_requirement.txt .\Week1\day06\result.json --verbose
 ```
 
 检查 JSON 顶层结构：

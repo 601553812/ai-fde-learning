@@ -38,7 +38,7 @@ Day 4 使用 `sys.argv` 手动判断参数数量。Day 5 改用 Python 标准库
 在 `day05_notes.md` 写下开始时间，然后从仓库根目录运行：
 
 ```text
-.\.venv\Scripts\python.exe -m pytest .\day05\test_day05.py -q --maxfail=1
+.\.venv\Scripts\python.exe -m pytest .\Week1\day05\test_day05.py -q --maxfail=1
 ```
 
 前 12 项 Day 4 回归测试应当通过，CLI 测试会停在 TODO 1。这表示旧功能没有损坏，新功能尚未完成。
@@ -152,7 +152,7 @@ raise SystemExit(main())
 最终运行：
 
 ```text
-.\.venv\Scripts\python.exe -m pytest .\day05\test_day05.py -q
+.\.venv\Scripts\python.exe -m pytest .\Week1\day05\test_day05.py -q
 ```
 
 预期：
@@ -166,13 +166,13 @@ raise SystemExit(main())
 查看自动帮助：
 
 ```text
-.\.venv\Scripts\python.exe -m day05.cli --help
+.\.venv\Scripts\python.exe -m Week1.day05.cli --help
 ```
 
 运行正常输入并开启详细日志：
 
 ```text
-.\.venv\Scripts\python.exe -m day05.cli .\day05\sample_requirement.txt .\day05\result.json --verbose
+.\.venv\Scripts\python.exe -m Week1.day05.cli .\Week1\day05\sample_requirement.txt .\Week1\day05\result.json --verbose
 ```
 
 CMD / Cmder 查看退出码：

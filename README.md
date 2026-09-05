@@ -8,12 +8,15 @@
 
 - [完整学习路线](./AI-FDE学习路线.md)
 - [学习进度](./学习进度.md)
-- [Day 1：Python 基础与需求解析](./day01/README.md)
-- [Day 2：tuple、重构与异常处理](./day02/README.md)
-- [Day 3：dataclass 与 pytest](./day03/README.md)
-- [Day 4：Python 模块、package 与统一 import](./day04/README.md)
-- [Day 5：argparse 与 logging](./day05/README.md)
-- [Day 6：Pydantic 数据模型与运行时校验](./day06/README.md)
+- [Week 1（Day 1～7）](./Week1/)
+  - [Day 1：Python 基础与需求解析](./Week1/day01/README.md)
+  - [Day 2：tuple、重构与异常处理](./Week1/day02/README.md)
+  - [Day 3：dataclass 与 pytest](./Week1/day03/README.md)
+  - [Day 4：Python 模块、package 与统一 import](./Week1/day04/README.md)
+  - [Day 5：argparse 与 logging](./Week1/day05/README.md)
+  - [Day 6：Pydantic 数据模型与运行时校验](./Week1/day06/README.md)
+  - [Day 7：HTTP JSON 客户端与错误边界](./Week1/day07/README.md)
+- [Day 8：HTTP CLI 单元测试](./day08/README.md)
 
 ## 当前技术主线
 

@@ -37,7 +37,7 @@ def run(input_path: Path, output_path: Path) -> int:
 
 def main() -> None:
     if len(sys.argv) != 3:
-        print("Usage: python -m day04.cli INPUT_PATH OUTPUT_PATH")
+        print("Usage: python -m Week1.day04.cli INPUT_PATH OUTPUT_PATH")
         raise SystemExit(2)
 
     raise SystemExit(run(Path(sys.argv[1]), Path(sys.argv[2])))

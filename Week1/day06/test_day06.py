@@ -8,8 +8,8 @@ from pathlib import Path
 import pytest
 from pydantic import ValidationError
 
-from day06 import AnalysisOutput, RequirementData, parse_requirement
-from day06.cli import build_output, run
+from Week1.day06 import AnalysisOutput, RequirementData, parse_requirement
+from Week1.day06.cli import build_output, run
 
 
 def test_day5_parser_behavior_is_preserved() -> None:

@@ -136,7 +136,7 @@ def fetch_requirement(url: str) -> RequirementData:
 
 ## 15～30 分钟：先看懂签名与继承
 
-打开 `day07/api_client.py`：
+打开 `Week1/day07/api_client.py`：
 
 ```python
 class RequirementApiError(Exception):
@@ -172,7 +172,7 @@ def fetch_requirement(
 
 ## 65～95 分钟：补完三个测试
 
-打开 `day07/test_day07.py`：
+打开 `Week1/day07/test_day07.py`：
 
 - TODO 4：模拟成功响应，断言 URL、`timeout_seconds` 和返回模型内容。
 - TODO 5：让假的 `requests.get()` 抛出 `requests.Timeout`，断言对外得到 `RequirementApiError`。
@@ -183,7 +183,7 @@ def fetch_requirement(
 运行：
 
 ```powershell
-.\.venv\Scripts\python.exe -m pytest .\day06\test_day06.py .\day07\test_day07.py -q
+.\.venv\Scripts\python.exe -m pytest .\Week1\day06\test_day06.py .\Week1\day07\test_day07.py -q
 ```
 
 初始脚手架预计为 `8 passed, 7 failed`；完成后应为 `15 passed`。
@@ -195,13 +195,13 @@ def fetch_requirement(
 终端 A（启动服务器）：
 
 ```powershell
-.\.venv\Scripts\python.exe -m http.server 8000 --directory .\day07
+.\.venv\Scripts\python.exe -m http.server 8000 --directory .\Week1\day07
 ```
 
 终端 B（调用客户端）：
 
 ```powershell
-.\.venv\Scripts\python.exe -c "from day07 import fetch_requirement; print(fetch_requirement('http://127.0.0.1:8000/sample_requirement.json'))"
+.\.venv\Scripts\python.exe -c "from Week1.day07 import fetch_requirement; print(fetch_requirement('http://127.0.0.1:8000/sample_requirement.json'))"
 ```
 
 成功后回到终端 A 按 `Ctrl+C` 停止服务器。

@@ -26,9 +26,8 @@ Java 与 Python 对照理解：
 先让终端位于仓库根目录，再依次执行：
 
 ```powershell
-cd .\day01
-python --version
-python .\day01_requirement_parser.py
+.\.venv\Scripts\python.exe --version
+.\.venv\Scripts\python.exe .\Week1\day01\day01_requirement_parser.py
 ```
 
 预期结果：
@@ -85,9 +84,9 @@ python .\day01_requirement_parser.py
 执行：
 
 ```powershell
-python .\day01_requirement_parser.py
-Get-Content -Raw -Encoding utf8 .\result.json
-python .\verify_day01.py
+.\.venv\Scripts\python.exe .\Week1\day01\day01_requirement_parser.py
+Get-Content -Raw -Encoding utf8 .\Week1\day01\result.json
+.\.venv\Scripts\python.exe .\Week1\day01\verify_day01.py
 ```
 
 完成标准：最后一条命令显示：
@@ -122,7 +121,7 @@ DAY 1 PASS
 4. 今天遇到的第一个错误是什么，如何修复？
 5. 用日语写 3～5 句，向客户说明这个程序能做什么、不能做什么。
 
-然后更新上一级的 `学习进度.md`，把 Day 1 状态改为“完成”或“部分完成”。不要因为超时而硬做完；120 分钟到点就记录实际进度。
+然后更新仓库根目录的 `学习进度.md`，把 Day 1 状态改为“完成”或“部分完成”。不要因为超时而硬做完；120 分钟到点就记录实际进度。
 
 ## 提交给我检查时
 

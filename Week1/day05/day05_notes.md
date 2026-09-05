@@ -8,7 +8,7 @@
 module对应一个py文件
 package是一个文件夹,来控制同一命名空间
 namespace是命名空间,用来指定导入的包或者类
-2. 为什么 `python -m day05.cli` 能让相对导入正常工作？
+2. 为什么 `python -m Week1.day05.cli` 能让相对导入正常工作？
 通过模块生命来加载day05.cli,可以找package上下文
 3. 位置参数与 `--verbose` 这种可选参数有什么区别？
 位置参数是缺一不可的 可选参数即使没有不影响程序运行

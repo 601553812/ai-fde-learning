@@ -9,7 +9,7 @@
 Day 3 的测试中曾同时出现两种导入：
 
 ```python
-from day03.day03_requirement_parser import empty_result
+from Week1.day03.day03_requirement_parser import empty_result
 from day03_requirement_parser import RequirementItem
 ```
 
@@ -18,7 +18,7 @@ from day03_requirement_parser import RequirementItem
 Day 4 将代码拆成：
 
 ```text
-day04/
+Week1/day04/
 ├─ __init__.py      对外公开接口
 ├─ models.py        数据结构
 ├─ parser.py        文本解析
@@ -41,7 +41,7 @@ day04/
 完成标准：
 
 - pytest 显示 `12 passed`。
-- CLI 能通过 `python -m day04.cli ...` 运行。
+- CLI 能通过 `python -m Week1.day04.cli ...` 运行。
 - `test_day04.py` 只从 `day04` 导入公共接口，不混用多种路径。
 - 能解释模块、package、`__init__.py` 和相对导入分别解决什么问题。
 
@@ -51,7 +51,7 @@ day04/
 
 ```text
 .\.venv\Scripts\python.exe --version
-.\.venv\Scripts\python.exe -m pytest .\day04\test_day04.py -q
+.\.venv\Scripts\python.exe -m pytest .\Week1\day04\test_day04.py -q
 ```
 
 起始状态会在导入阶段失败，这是正常现象，因为 TODO 1 尚未完成。
@@ -69,7 +69,7 @@ parser.py
 
 ### package
 
-包含 `__init__.py` 的目录可以作为 package 使用。本题中的 package 名是 `day04`。
+包含 `__init__.py` 的目录可以作为 package 使用。归档后本题的完整 package 名是 `Week1.day04`。
 
 ### 相对导入
 
@@ -86,16 +86,16 @@ from .models import RequirementItem
 外部测试不需要知道类究竟定义在哪个子模块，只需要：
 
 ```python
-from day04 import RequirementItem
+from Week1.day04 import RequirementItem
 ```
 
-`day04/__init__.py` 负责把需要公开的名字统一导出。
+`Week1/day04/__init__.py` 负责把需要公开的名字统一导出。
 
 先回答 `day04_notes.md` 的开始前 4 个问题。
 
 ## 35～55 分钟：完成 TODO 1
 
-编辑 `day04/__init__.py`，从三个子模块导入并公开以下名字：
+编辑 `Week1/day04/__init__.py`，从三个子模块导入并公开以下名字：
 
 ```text
 RequirementItem
@@ -132,7 +132,7 @@ from .models import RequirementItem
 ## 85～105 分钟：运行 12 项回归测试
 
 ```text
-.\.venv\Scripts\python.exe -m pytest .\day04\test_day04.py -q
+.\.venv\Scripts\python.exe -m pytest .\Week1\day04\test_day04.py -q
 ```
 
 每次只处理第一个失败，最终必须看到：
@@ -148,24 +148,24 @@ from .models import RequirementItem
 PowerShell、CMD 和 Cmder 都可以直接执行这一整行：
 
 ```text
-.\.venv\Scripts\python.exe -m day04.cli .\day04\sample_requirement.txt .\day04\result.json
+.\.venv\Scripts\python.exe -m Week1.day04.cli .\Week1\day04\sample_requirement.txt .\Week1\day04\result.json
 ```
 
 CMD / Cmder 查看退出码和结果：
 
 ```bat
 echo %ERRORLEVEL%
-type .\day04\result.json
+type .\Week1\day04\result.json
 ```
 
 PowerShell 查看退出码和结果：
 
 ```powershell
 $LASTEXITCODE
-Get-Content -Raw -Encoding utf8 .\day04\result.json
+Get-Content -Raw -Encoding utf8 .\Week1\day04\result.json
 ```
 
-这里使用 `python -m day04.cli`，不要直接执行 `python day04/cli.py`。前者会以 package 模块方式加载，确保相对导入正常。
+这里使用 `python -m Week1.day04.cli`，不要直接执行 `python Week1/day04/cli.py`。前者会以 package 模块方式加载，确保相对导入正常。
 
 ## 115～120 分钟：复盘
 

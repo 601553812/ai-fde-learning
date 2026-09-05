@@ -8,14 +8,14 @@ from pathlib import Path
 
 import pytest
 
-from day05 import (
+from Week1.day05 import (
     RequirementItem,
     classify_line,
     empty_result,
     parse_requirement,
     validate_result,
 )
-from day05.cli import build_parser, run
+from Week1.day05.cli import build_parser, run
 
 
 def test_public_package_interface_is_available() -> None:

@@ -54,8 +54,7 @@ tuple 与 list 的关键区别：
 在 `day02_notes.md` 中先回答前 3 题。让终端位于仓库根目录，然后运行：
 
 ```powershell
-cd .\day02
-python .\verify_day02.py
+.\.venv\Scripts\python.exe .\Week1\day02\verify_day02.py
 ```
 
 起始代码尚未完成，因此此时失败是正常现象。
@@ -104,7 +103,7 @@ def describe_status(status: int) -> str:
 ## 70～90 分钟：运行自动检查
 
 ```powershell
-python .\verify_day02.py
+.\.venv\Scripts\python.exe .\Week1\day02\verify_day02.py
 ```
 
 如果失败，只处理第一条错误，再重新运行。检查覆盖以下情况：
@@ -143,7 +142,7 @@ python .\verify_day02.py
 手动验证不存在的文件：
 
 ```powershell
-python .\day02_requirement_parser.py .\not-found.txt .\result.json
+.\.venv\Scripts\python.exe .\Week1\day02\day02_requirement_parser.py .\Week1\day02\not-found.txt .\Week1\day02\result.json
 $LASTEXITCODE
 ```
 
@@ -152,16 +151,16 @@ $LASTEXITCODE
 再验证正常输入：
 
 ```powershell
-python .\day02_requirement_parser.py .\sample_requirement.txt .\result.json
-Get-Content -Raw -Encoding utf8 .\result.json
-python .\verify_day02.py
+.\.venv\Scripts\python.exe .\Week1\day02\day02_requirement_parser.py .\Week1\day02\sample_requirement.txt .\Week1\day02\result.json
+Get-Content -Raw -Encoding utf8 .\Week1\day02\result.json
+.\.venv\Scripts\python.exe .\Week1\day02\verify_day02.py
 ```
 
 ## 105～120 分钟：复盘与日语说明
 
 完成 `day02_notes.md`。最后用日语写 3～5 句，重点说明 Day 2 相比 Day 1 改善了什么，而不是重复程序使用方法。
 
-完成后更新上一级的 `学习进度.md`：填写实际用时、自动检查结果、最难的点和明天需复习内容。
+完成后更新仓库根目录的 `学习进度.md`：填写实际用时、自动检查结果、最难的点和明天需复习内容。
 
 ## 提交给我检查时
 

@@ -11,6 +11,7 @@ __pycache__/
 *.swp
 *.swo
 **/result.json
+day08/output.json
 
 # Local Codex configuration
 .agents/

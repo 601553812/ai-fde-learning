@@ -8,7 +8,7 @@
 package 不是用来控制变量或方法访问权限的，而是把多个模块组织在统一的导入命名空间下。
 3. `from .models import RequirementItem` 开头的 `.` 表示什么？
 当前 package
-4. 为什么测试统一写 `from day04 import ...`，而不直接依赖每个内部文件？
+4. 为什么测试统一写 `from Week1.day04 import ...`，而不直接依赖每个内部文件？
 不关心每个类具体定义在哪个模块,只关心这个包里有没有这个类,如果有就直接导入
 ## 完成后复盘
 
@@ -26,9 +26,9 @@ parser.py validation.py __init__.py
 package的作用域是一个文件夹
 ~~__init__.py是公开这个package的外部接口,控制那些东西可以给外部调用~~
 __init__.py 是总机：启动时联系各部门并登记公开联系人，以后外部可以直接通过总机找到这些联系人。
-6. 为什么使用 `python -m day04.cli`，而不是直接执行 `day04/cli.py`？
+6. 为什么使用 `python -m Week1.day04.cli`，而不是直接执行 `Week1/day04/cli.py`？
 ~~把day04作为一个package来加载,如果直接执行后者那就是指定了文件,而没有把个人成长当成一个project来运行~~
--m 会在 day04 package 的上下文中加载 cli，因此 .parser 等相对导入可以正常工作；直接运行 cli.py 时，它会被当作顶层脚本，可能失去所属 package 信息。
+-m 会在 Week1.day04 package 的上下文中加载 cli，因此 .parser 等相对导入可以正常工作；直接运行 cli.py 时，它会被当作顶层脚本，可能失去所属 package 信息。
 7. 拆分文件后，pytest 为什么仍能验证业务行为没有改变？
 ~~因为pytest还可以通过import的内容来找到测试所对应的类~~
 重构后继续使用相同输入和输出断言；12 项测试仍然通过，说明拆分模块没有改变已覆盖的业务行为。能够 import 只是运行测试的前提。

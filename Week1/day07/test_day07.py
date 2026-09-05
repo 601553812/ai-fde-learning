@@ -7,8 +7,8 @@ from typing import Any
 import pytest
 import requests
 
-from day06.models import RequirementData
-from day07.api_client import RequirementApiError, fetch_requirement
+from Week1.day06.models import RequirementData
+from Week1.day07.api_client import RequirementApiError, fetch_requirement
 
 
 VALID_PAYLOAD: dict[str, list[str]] = {
@@ -60,7 +60,7 @@ def test_fetch_requirement_uses_timeout_and_returns_model(monkeypatch: pytest.Mo
         assert timeout == 3.0
         return response
 
-    monkeypatch.setattr("day07.api_client.requests.get", fake_get)
+    monkeypatch.setattr("Week1.day07.api_client.requests.get", fake_get)
 
     result = fetch_requirement("https://example.invalid/requirements",timeout_seconds=3.0)
     assert isinstance(result, RequirementData)
@@ -70,14 +70,14 @@ def test_fetch_requirement_uses_timeout_and_returns_model(monkeypatch: pytest.Mo
 def test_fetch_requirement_converts_timeout(monkeypatch: pytest.MonkeyPatch) -> None:
     def fake_get(url:str,timeout: float) -> FakeResponse:
         raise requests.Timeout
-    monkeypatch.setattr("day07.api_client.requests.get", fake_get)
+    monkeypatch.setattr("Week1.day07.api_client.requests.get", fake_get)
     with pytest.raises(RequirementApiError):
         fetch_requirement("https://example.invalid/requirements")
 
 
 def test_fetch_requirement_converts_http_error(monkeypatch: pytest.MonkeyPatch) -> None:
     response = FakeResponse(status_error=requests.HTTPError("503 Server Error"))
-    monkeypatch.setattr("day07.api_client.requests.get", lambda url, timeout: response)
+    monkeypatch.setattr("Week1.day07.api_client.requests.get", lambda url, timeout: response)
 
     with pytest.raises(RequirementApiError):
         fetch_requirement("https://example.invalid/requirements")
@@ -89,7 +89,7 @@ def test_fetch_requirement_converts_http_error(monkeypatch: pytest.MonkeyPatch) 
 def test_fetch_requirement_converts_invalid_json(monkeypatch: pytest.MonkeyPatch) -> None:
     json_error = requests.JSONDecodeError("invalid JSON", "{", 1)
     response = FakeResponse(json_error=json_error)
-    monkeypatch.setattr("day07.api_client.requests.get", lambda url, timeout: response)
+    monkeypatch.setattr("Week1.day07.api_client.requests.get", lambda url, timeout: response)
 
     with pytest.raises(RequirementApiError):
         fetch_requirement("https://example.invalid/requirements")
@@ -97,7 +97,7 @@ def test_fetch_requirement_converts_invalid_json(monkeypatch: pytest.MonkeyPatch
 
 def test_fetch_requirement_converts_schema_error(monkeypatch: pytest.MonkeyPatch) -> None:
     response = FakeResponse(payload={"functions":"not-a-list"})
-    monkeypatch.setattr("day07.api_client.requests.get", lambda url, timeout: response)
+    monkeypatch.setattr("Week1.day07.api_client.requests.get", lambda url, timeout: response)
     with pytest.raises(RequirementApiError):
        fetch_requirement(
            "https://example.invalid/requirements" )
@@ -109,7 +109,7 @@ def test_requirement_api_error_keeps_original_cause(monkeypatch: pytest.MonkeyPa
     def fake_get(url: str, timeout: float) -> FakeResponse:
         raise original_error
 
-    monkeypatch.setattr("day07.api_client.requests.get", fake_get)
+    monkeypatch.setattr("Week1.day07.api_client.requests.get", fake_get)
 
     with pytest.raises(RequirementApiError) as caught:
         fetch_requirement("https://example.invalid/requirements")

@@ -6,7 +6,7 @@ from dataclasses import FrozenInstanceError
 
 import pytest
 
-from day04 import (
+from Week1.day04 import (
     RequirementItem,
     classify_line,
     empty_result,

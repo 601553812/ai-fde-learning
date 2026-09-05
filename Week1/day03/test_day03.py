@@ -6,10 +6,10 @@ from dataclasses import FrozenInstanceError
 
 import pytest
 
-from day03.day03_requirement_parser import empty_result
-from day03_requirement_parser import (
+from Week1.day03.day03_requirement_parser import (
     RequirementItem,
     classify_line,
+    empty_result,
     parse_requirement,
     validate_result,
 )
