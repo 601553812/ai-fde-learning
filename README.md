@@ -17,6 +17,7 @@
   - [Day 6：Pydantic 数据模型与运行时校验](./Week1/day06/README.md)
   - [Day 7：HTTP JSON 客户端与错误边界](./Week1/day07/README.md)
 - [Day 8：HTTP CLI 单元测试](./day08/README.md)
+- [Day 9：FastAPI 需求分析接口](./day09/README.md)
 
 ## 当前技术主线
 
