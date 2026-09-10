@@ -20,6 +20,7 @@
 - [Day 9：FastAPI 需求分析接口](./day09/README.md)
 - [Day 10：API 错误处理与长度边界](./day10/README.md)
 - [Day 11：可替换分析服务与依赖注入](./day11/README.md)
+- [Day 12：分析器替换与连续请求巩固](./day12/README.md)
 
 ## 当前技术主线
 
