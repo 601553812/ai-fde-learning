@@ -22,6 +22,7 @@
 - [Day 11：可替换分析服务与依赖注入](./day11/README.md)
 - [Day 12：分析器替换与连续请求巩固](./day12/README.md)
 - [Day 13：环境变量与安全配置](./day13/README.md)
+- [Day 14：校验模型返回的 JSON（本地模拟）](./day14/README.md)
 
 ## 文件职责
 
