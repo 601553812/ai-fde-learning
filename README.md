@@ -25,6 +25,7 @@
   - [Day 13：环境变量与安全配置](./Week2/day13/README.md)
   - [Day 14：校验模型返回的 JSON（本地模拟）](./Week2/day14/README.md)
 - [Week 3（Day 15～21，从 Day 15 开始）](./Week3/README.md)
+  - [Day 15：组织模型请求——提取规则与需求原文](./Week3/day15/README.md)
 
 ## 文件职责
 
