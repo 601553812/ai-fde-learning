@@ -26,6 +26,7 @@
   - [Day 14：校验模型返回的 JSON（本地模拟）](./Week2/day14/README.md)
 - [Week 3（Day 15～21，从 Day 15 开始）](./Week3/README.md)
   - [Day 15：组织模型请求——提取规则与需求原文](./Week3/day15/README.md)
+  - [Day 16：从模型请求到第一次真实调用（进行中）](./Week3/day16/README.md)
 
 ## 文件职责
 

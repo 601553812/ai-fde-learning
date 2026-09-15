@@ -26,3 +26,6 @@ Week2/day08/output.json
 # OS files
 .DS_Store
 Thumbs.db
+
+# Personal course materials (not part of the public learning deliverables)
+/腾讯FDE教程/
