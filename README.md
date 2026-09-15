@@ -16,13 +16,15 @@
   - [Day 5：argparse 与 logging](./Week1/day05/README.md)
   - [Day 6：Pydantic 数据模型与运行时校验](./Week1/day06/README.md)
   - [Day 7：HTTP JSON 客户端与错误边界](./Week1/day07/README.md)
-- [Day 8：HTTP CLI 单元测试](./day08/README.md)
-- [Day 9：FastAPI 需求分析接口](./day09/README.md)
-- [Day 10：API 错误处理与长度边界](./day10/README.md)
-- [Day 11：可替换分析服务与依赖注入](./day11/README.md)
-- [Day 12：分析器替换与连续请求巩固](./day12/README.md)
-- [Day 13：环境变量与安全配置](./day13/README.md)
-- [Day 14：校验模型返回的 JSON（本地模拟）](./day14/README.md)
+- [Week 2（Day 8～14）](./Week2/README.md)
+  - [Day 8：HTTP CLI 单元测试](./Week2/day08/README.md)
+  - [Day 9：FastAPI 需求分析接口](./Week2/day09/README.md)
+  - [Day 10：API 错误处理与长度边界](./Week2/day10/README.md)
+  - [Day 11：可替换分析服务与依赖注入](./Week2/day11/README.md)
+  - [Day 12：分析器替换与连续请求巩固](./Week2/day12/README.md)
+  - [Day 13：环境变量与安全配置](./Week2/day13/README.md)
+  - [Day 14：校验模型返回的 JSON（本地模拟）](./Week2/day14/README.md)
+- [Week 3（Day 15～21，从 Day 15 开始）](./Week3/README.md)
 
 ## 文件职责
 
