@@ -1,0 +1,29 @@
+{
+  "source": "Day16 Cmder outputs transcribed in day16_notes.md; historical replay, not a new model call",
+  "recorded_date": "2026-09-16",
+  "model": "gemini-3.8-flash",
+  "prompt_version": "Week3/day15/prompt.py at f1f9839",
+  "cases": [
+    {
+      "id": "A",
+      "text": "機能: CSV出力\n受入条件: 3秒以内",
+      "raw": "{\"functions\":[\"CSV出力\"],\"acceptance_criteria\":[\"3秒以内\"],\"risks\":[],\"questions\":[],\"unknown\":[]}",
+      "must_contain": {"functions": ["CSV"], "acceptance_criteria": ["3秒以内"]},
+      "must_be_empty": ["risks", "questions", "unknown"]
+    },
+    {
+      "id": "B",
+      "text": "注文一覧をCSVで出力したい。出力は3秒以内に完了すること。文字化けが心配なので、文字コードは担当者に確認したい。",
+      "raw": "{\"functions\":[\"注文一覧をCSVで出力したい\"],\"acceptance_criteria\":[\"出力は3秒以内に完了すること\"],\"risks\":[\"文字化けが心配\"],\"questions\":[\"文字コードは担当者に確認したい\"],\"unknown\":[]}",
+      "must_contain": {"functions": ["注文一覧", "CSV"], "acceptance_criteria": ["3秒以内"], "risks": ["文字化け"], "questions": ["文字コード", "確認"]},
+      "must_be_empty": ["unknown"]
+    },
+    {
+      "id": "C",
+      "text": "注文一覧をCSVで出力したい。",
+      "raw": "{\"functions\":[\"注文一覧をCSVで出力する\"],\"acceptance_criteria\":[],\"risks\":[],\"questions\":[],\"unknown\":[]}",
+      "must_contain": {"functions": ["注文一覧", "CSV"]},
+      "must_be_empty": ["acceptance_criteria", "risks", "questions", "unknown"]
+    }
+  ]
+}
