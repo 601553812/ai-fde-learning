@@ -28,6 +28,7 @@
   - [Day 15：组织模型请求——提取规则与需求原文](./Week3/day15/README.md)
   - [Day 16：从模型请求到第一次真实调用](./Week3/day16/README.md)
   - [Day 17：建立需求提取的小型评测基线](./Week3/day17/README.md)
+  - [Day 19：模型调用失败时，程序应该返回什么](./Week3/day19/README.md)
 
 ## 文件职责
 
