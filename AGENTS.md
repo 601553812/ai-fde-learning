@@ -49,6 +49,7 @@
 - 可以提供不包含最终答案的脚手架、类型签名、测试、样例数据和小型示例。
 - 每日 README 必须按学习者实际执行顺序组织。若要求在开始学习、修改代码前测试脚手架状态，必须把该步骤放在 README 开头的开始流程中，早于阅读和 TODO，写明工作目录、可复制命令、预期通过/失败结果及失败原因；不能只在后面的验收章节或助手验证记录中提及。明确区分开始时的脚手架检查、实现中的测试和完成后的验收；若不要求学习者执行，须标明仅为助手验证记录。不得要求已完成实现的学习者回退代码补跑初始失败状态。
 - 测试应体现真实需求，而不是只追求通过数量。例如要求“不生成输出文件”时，必须在调用后断言文件不存在。
+- If a test checks exception-message text or another exact output detail, state that requirement explicitly in the README; saying to preserve supplied code does not replace the contract. Treat an undocumented assertion requirement as an exercise-design omission, not a learner mistake, and clarify it without adding retroactive acceptance work.
 - 新一天应继承前一天已经验证的行为，避免为了学习新概念同时重写无关逻辑。
 
 ## 5. 环境与运行约定

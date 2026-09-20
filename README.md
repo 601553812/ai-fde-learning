@@ -29,6 +29,7 @@
   - [Day 16：从模型请求到第一次真实调用](./Week3/day16/README.md)
   - [Day 17：建立需求提取的小型评测基线](./Week3/day17/README.md)
   - [Day 19：模型调用失败时，程序应该返回什么](./Week3/day19/README.md)
+  - [Day 20：模型暂时不可用时，有限次数重试](./Week3/day20/README.md)
 
 ## 文件职责
 
