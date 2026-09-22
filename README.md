@@ -32,6 +32,9 @@
   - [Day 20：模型暂时不可用时，有限次数重试](./Week3/day20/README.md)
   - [Day 21：汇总模型调用结果与重试次数](./Week3/day21/README.md)
 
+- [Week 4（Day 22～28）](./Week4/README.md)
+  - [Day 22：顺序执行多个需求任务](./Week4/day22/README.md)
+
 ## 文件职责
 
 - AGENTS.md：长期协作、教学与验收规则。
