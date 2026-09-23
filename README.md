@@ -34,6 +34,7 @@
 
 - [Week 4（Day 22～28）](./Week4/README.md)
   - [Day 22：顺序执行多个需求任务](./Week4/day22/README.md)
+  - [Day 23：把批处理接到 FastAPI](./Week4/day23/README.md)
 
 ## 文件职责
 
