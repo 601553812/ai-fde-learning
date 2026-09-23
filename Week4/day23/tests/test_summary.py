@@ -2,9 +2,9 @@
 
 from copy import deepcopy
 
-from .call_service import CallResult
-from .retry_service import RetryResult
-from .summary import summarize
+from ..code.call_service import CallResult
+from ..code.retry_service import RetryResult
+from ..code.summary import summarize
 
 
 def test_empty_reports():

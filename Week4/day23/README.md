@@ -8,7 +8,7 @@
 2. 在项目根运行初始检查，CMD/Cmder、PowerShell 通用：
 
 ```text
-.\.venv\Scripts\python.exe -m pytest Week4/day23 -q
+.\.venv\Scripts\python.exe -m pytest Week4/day23/tests -q
 ```
 
 初始预期 **65 passed / 8 failed，退出 1**：56 项继承行为、9 项已提供的输入校验通过；两个业务 TODO 和一项自写测试造成 8 项失败。这些是作业占位，不是环境故障。实现后不用回退。
@@ -18,7 +18,7 @@
 
 ## 1. 两行复习（5 分钟）
 
-当天副本 [batch_fakes.py](./batch_fakes.py) 中：
+当天副本 [batch_fakes.py](./code/batch_fakes.py) 中：
 
 ```python
 factory = RecordingFactory({"A": ["ok"]})
@@ -29,7 +29,7 @@ gateway = factory("A")
 
 ## 2. 先理解今天的普通调用链（20～25 分钟）
 
-阅读顺序：[api_models.py](./api_models.py) → [runtime.py](./runtime.py) → [app.py](./app.py)。已有服务仅在需要时查阅 [batch.py](./batch.py)、[summary.py](./summary.py)。
+阅读顺序：[api_models.py](./code/api_models.py) → [runtime.py](./code/runtime.py) → [app.py](./code/app.py)。已有服务仅在需要时查阅 [batch.py](./code/batch.py)、[summary.py](./code/summary.py)。
 
 ```text
 客户端 POST /analyze-batch，发送 JSON
@@ -74,7 +74,7 @@ HTTPException 要 raise，不要 return；FastAPI 把 detail 放进响应 JSON�
 
 ### 测试替换的具体含义
 
-先看 [test_api.py](./test_api.py) 的 setup_api，再看测试：
+先看 [test_api.py](./tests/test_api.py) 的 setup_api，再看测试：
 
 ```python
 app.dependency_overrides[get_runtime] = lambda: BatchRuntime(factory, sleeper)
@@ -132,9 +132,8 @@ TestClient 会走请求解析、路由和响应处理，但不启动监听端口
 项目根，两种 Windows shell 通用：
 
 ```text
-.\.venv\Scripts\python.exe -m pytest Week4/day23 -q
-.\.venv\Scripts\python.exe -m pytest -q
-.\.venv\Scripts\python.exe -m uvicorn Week4.day23.app:app --host 127.0.0.1 --port 8023
+.\.venv\Scripts\python.exe -m pytest Week4/day23/tests -q
+.\.venv\Scripts\python.exe -m uvicorn Week4.day23.code.app:app --host 127.0.0.1 --port 8023
 ```
 
 第三条占用当前终端，另开终端仍在项目根运行（使用 curl.exe 避免 PowerShell 别名）：
@@ -165,3 +164,9 @@ Day22 所有 .py 与 56 项测试复制到当天目录，绝对项目导入已�
 ### 最终验收（2026-09-23）
 
 学习者完成两个函数与独立 HTTP 零调用测试，助手修正测试结束后的依赖覆盖清理；三题复盘核心结论正确。实际用时自报 1h、难度简单。本日 73 passed、全仓 410 passed；本地 HTTP 状态、逐项结果、空批次、重复编号、非法上限与日文输出通过。详细反馈见当天笔记。提交与上传状态以学习进度中的最终核对为准。
+
+### 目录整理（2026-09-23）
+
+- `code/` 保存接口、批处理及离线演示代码；`tests/` 保存本日 73 项自动测试；样例请求和学习文档留在 `day23/` 根目录。
+- 从项目根运行当天测试：`.\.venv\Scripts\python.exe -m pytest Week4/day23/tests -q`。只改当天代码时先跑这条；本次目录和导入调整已额外跑过一次全仓回归（410 passed）。第 4 节原先要求的全仓命令已移出每日必做步骤。
+- 服务器入口现在是 `Week4.day23.code.app:app`；离线演示入口如 `python -m Week4.day23.code.run_batch_demo`。第 0、4 节的建立时测试结果属于整理前历史记录，73 项契约本身未变。

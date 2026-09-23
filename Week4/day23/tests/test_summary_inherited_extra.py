@@ -1,8 +1,8 @@
 """TODO 2: two separate summaries must not share accumulated counts."""
 
-from .call_service import CallResult
-from .retry_service import RetryResult
-from .summary import summarize
+from ..code.call_service import CallResult
+from ..code.retry_service import RetryResult
+from ..code.summary import summarize
 
 
 def test_second_summary_starts_from_zero():

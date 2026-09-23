@@ -3,8 +3,8 @@
 import json
 import httpx
 import pytest
-from Week4.day23.gemini_gateway import GeminiGateway, TIMEOUT_SECONDS
-from Week4.day23.prompt import build_request
+from Week4.day23.code.gemini_gateway import GeminiGateway, TIMEOUT_SECONDS
+from Week4.day23.code.prompt import build_request
 
 
 def test_copied_request_retains_document():

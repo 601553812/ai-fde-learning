@@ -2,9 +2,9 @@
 
 import httpx
 import pytest
-from Week4.day23.call_service import CallResult, call_once, classify_status
-from Week4.day23.prompt import build_request
-from Week4.day23.scenarios import RAW
+from Week4.day23.code.call_service import CallResult, call_once, classify_status
+from Week4.day23.code.prompt import build_request
+from Week4.day23.code.scenarios import RAW
 
 
 class FakeGateway:

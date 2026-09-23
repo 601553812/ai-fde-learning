@@ -3,10 +3,10 @@
 import httpx
 import pytest
 
-from Week4.day23.call_service import CallResult
-from Week4.day23.fakes import RecordingSleeper, SequenceGateway, status_error
-from Week4.day23.prompt import build_request
-from Week4.day23.retry_service import RetryResult, call_with_retry, should_retry
+from Week4.day23.code.call_service import CallResult
+from Week4.day23.code.fakes import RecordingSleeper, SequenceGateway, status_error
+from Week4.day23.code.prompt import build_request
+from Week4.day23.code.retry_service import RetryResult, call_with_retry, should_retry
 
 
 @pytest.mark.parametrize("result,expected", [

@@ -2,9 +2,9 @@
 
 import pytest
 
-from .batch import Task, run_batch
-from .batch_fakes import RecordingFactory
-from .fakes import RecordingSleeper
+from ..code.batch import Task, run_batch
+from ..code.batch_fakes import RecordingFactory
+from ..code.fakes import RecordingSleeper
 
 
 def test_duplicate_id_rejects_whole_batch_before_calls():

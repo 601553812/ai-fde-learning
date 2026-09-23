@@ -2,10 +2,10 @@
 
 from fastapi.testclient import TestClient
 
-from .app import app
-from .batch_fakes import RecordingFactory
-from .fakes import RecordingSleeper
-from .runtime import BatchRuntime, get_runtime
+from ..code.app import app
+from ..code.batch_fakes import RecordingFactory
+from ..code.fakes import RecordingSleeper
+from ..code.runtime import BatchRuntime, get_runtime
 
 
 def test_duplicate_http_request_has_no_calls():

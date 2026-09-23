@@ -4,10 +4,10 @@ from copy import deepcopy
 import json
 import pytest
 
-from .batch import Task, run_batch, validate_task_ids
-from .batch_fakes import RecordingFactory
-from .fakes import RecordingSleeper, status_error
-from .summary import summarize
+from ..code.batch import Task, run_batch, validate_task_ids
+from ..code.batch_fakes import RecordingFactory
+from ..code.fakes import RecordingSleeper, status_error
+from ..code.summary import summarize
 
 
 def test_validate_distinct_ids():

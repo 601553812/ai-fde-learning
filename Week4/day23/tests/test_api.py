@@ -7,13 +7,13 @@ import json
 import pytest
 from fastapi.testclient import TestClient
 
-from .app import app, make_response
-from .batch import TaskReport
-from .batch_fakes import RecordingFactory
-from .call_service import CallResult
-from .fakes import RecordingSleeper, status_error
-from .retry_service import RetryResult
-from .runtime import BatchRuntime, get_runtime
+from ..code.app import app, make_response
+from ..code.batch import TaskReport
+from ..code.batch_fakes import RecordingFactory
+from ..code.call_service import CallResult
+from ..code.fakes import RecordingSleeper, status_error
+from ..code.retry_service import RetryResult
+from ..code.runtime import BatchRuntime, get_runtime
 
 
 @pytest.fixture
