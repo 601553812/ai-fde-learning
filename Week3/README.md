@@ -11,6 +11,8 @@
 
 - [Day 17：建立需求提取的小型评测基线](./day17/README.md)
 - [Day 17 学习记录](./day17/day17_notes.md)
+- [Day 18：用固定样例验证一次 Prompt 修改](./day18/README.md)
+- [Day 18 学习记录](./day18/day18_notes.md)
 - [Day 19：模型调用失败时，程序应该返回什么](./day19/README.md)
 - [Day 19 学习记录](./day19/day19_notes.md)
 - [Day 20：模型暂时不可用时，有限次数重试](./day20/README.md)
@@ -18,7 +20,7 @@
 - [Day 21：汇总模型调用结果与重试次数](./day21/README.md)
 - [Day 21 学习记录](./day21/day21_notes.md)
 
-Day 15～17、Day19～21 已完成；当前进度和下一步统一见根目录学习进度。
+Day 15～17、Day19～21 已完成；Day18 已结束当日学习，真实对比留空，不要求补交。当前进度和下一步统一见根目录学习进度。
 
 ## 新对话的开始顺序
 

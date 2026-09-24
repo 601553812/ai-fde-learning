@@ -1,102 +1,106 @@
-# AI FDE 学习项目协作规范
+# AI FDE Learning Project Collaboration Guidelines
 
-本文件适用于仓库根目录、`WeekNN/dayNN/` 归档目录及根目录中尚未归档的 `dayNN/`。后续协助本项目时，应先阅读本文件，再进行规划、修改或验收。
+This file applies to the repository root, archived `WeekNN/dayNN/` directories, and unarchived `dayNN/` directories at the root. Read it before planning, making changes, or verifying work in this project.
 
-## 1. 项目定位与信息来源
+## 1. Project Purpose and Sources of Truth
 
-- 本项目用于准备日本市场的 AI Solution Engineer、生成 AI 导入支援、AI PoC Engineer 和相近客户交付型岗位。
-- 学习者已有 Java/Kotlin、Android、SQLite、日语客户沟通和软件交付经验；按横向转型安排内容，不按编程零基础重新教学。
-- `AI-FDE学习路线.md` 是总体路线的依据。
-- `学习进度.md` 是当前完成状态和下一步安排的唯一进度依据。
-- 文件分工：README 负责导航与运行说明；学习路线负责长期目标与阶段安排；学习进度负责当前状态与成果摘要；每日 README 负责作业契约；每日笔记负责原始回答、反馈与详细复盘；AGENTS 只保留可长期复用的规则。
-- 当前结论与历史过程分开标注。已解决的待办不得继续呈现为当前要求；详细验收过程优先放在每日笔记，进度文件保留摘要和链接。
-- 按每七个学习日分组：Week1 为 Day 1～7，Week2 为 Day 8～14，Week3 为 Day 15～21，依此类推；不按自然日历周计算。新一周代码直接放在对应 WeekN/dayNN/；每周切换时整理上一周目录，并在新周对话继续。目录调整必须同步 Python 导入、monkeypatch 字符串路径、命令、文档链接和忽略规则，并验证历史行为。
-- 开始新学习日或继续旧任务前，先读取上述两个文件、当前 `dayNN/README.md`、学习记录和 Git 状态，不依赖聊天记忆猜测进度。
+- This project prepares the learner for AI Solution Engineer, generative AI adoption support, AI PoC Engineer, and similar client-facing delivery roles in Japan.
+- The learner already has Java/Kotlin, Android, SQLite, Japanese-language client communication, and software delivery experience. Plan for a lateral career transition, not a restart from programming fundamentals.
+- `AI-FDE学习路线.md` is the source of truth for the overall roadmap.
+- `学习进度.md` is the sole source of truth for current completion status and next steps.
+- Document responsibilities: the root README covers navigation and execution instructions; the roadmap covers long-term goals and phases; the progress file covers current status and outcome summaries; daily READMEs define assignment contracts; daily notes preserve original answers, feedback, and detailed retrospectives; AGENTS contains only reusable, long-term rules.
+- Clearly distinguish current conclusions from historical process. Resolved tasks must not remain listed as current requirements. Keep detailed acceptance-check histories in daily notes, with summaries and links in the progress file.
+- Group every seven learning days together: Week1 is Days 1–7, Week2 is Days 8–14, Week3 is Days 15–21, and so on, rather than calendar weeks. Put new-week code directly in the corresponding `WeekN/dayNN/` directory. At each week transition, organize the previous week's directories and continue in the new week's conversation. Directory changes must also update Python imports, monkeypatch string paths, commands, documentation links, and ignore rules, and verify that previously established behavior is preserved.
+- Before starting a new learning day or resuming an existing task, read the two source-of-truth files above, the current `dayNN/README.md`, learning notes, and Git status. Do not infer progress from chat memory.
 
-## 2. 教学内容的筛选规则
+## 2. Selecting Learning Content
 
-- 每天只设置一个主要主题，范围应能在约 90～120 分钟内形成代码、测试或文档成果。
-- 根据 Day 9 的反馈，后续每日内容适度增加：在同一主主题下增加一项需要独立实现并验证的相关功能或边界场景，不只增加阅读量或重复断言；仍以约 90～120 分钟为参考，依据学习者自报用时和后续反馈调节。不要追溯增加已完成学习日的验收要求。
-- 引入陌生库或概念时，先从官方资料中筛选出完成当天任务真正需要的最小知识集，再开始 TODO。
-- 最小知识集应优先包含：它解决什么问题、与已有 Java/Kotlin 知识的对应关系、当天要用的少量语法、一个最小示例、常见错误和验收方法。
-- 不要把完整官方 API、整篇官方文档或大量链接直接交给学习者自行啃读。官方文档是扩展查阅资料，不代替入门讲解。
-- 明确列出“今天不需要学习”的高级或无关内容，避免因为库的 API 很多而扩大当天范围。
-- 学习者掌握最小闭环后，再根据后续任务逐步引入更多 API，不提前堆叠知识。
-- 解释 Python 概念时优先使用准确的 Java/Kotlin 对照，但必须指出类比的边界，不能把类比当成完全等价。
-- 学习者未使用过 Spring，不以 Spring、Controller 或 DI 容器为前置知识；涉及路由和依赖替换时，先用普通函数调用与当前代码逐段解释，再引入术语。学习者反馈难以消化时，应减少同时引入的概念，不继续按原计划加量。
-- 难度与练习量分开调整：概念已理解且自报用时明显较短时，逐步恢复同主题的独立实现或边界练习，不因为前一天吃力而持续压低任务量。用户在原作业通过后主动要求补充时，原作业与追加复习分别记录，不用追加内容倒推原作业未完成。
+- Set only one main topic per day, scoped to produce code, tests, or documentation in approximately 90–120 minutes.
+- Based on Day 9 feedback, moderately increase subsequent daily content: add one related feature or edge case under the same main topic that requires independent implementation and verification, rather than merely adding reading or repetitive assertions. Continue using approximately 90–120 minutes as a reference, adjusting based on the learner's self-reported time and later feedback. Do not retroactively add acceptance requirements to completed learning days.
+- Before introducing an unfamiliar library or concept, select from official resources the minimum knowledge actually needed for that day's task, then begin the TODOs.
+- This minimum knowledge should prioritize the problem it solves, its relationship to existing Java/Kotlin knowledge, the small amount of syntax needed that day, a minimal example, common mistakes, and how to verify the result.
+- Do not hand the learner an entire official API reference, full documentation page, or large collection of links to work through alone. Official documentation is supplementary reference material, not a substitute for an introductory explanation.
+- Explicitly list advanced or unrelated topics that do not need to be learned today. A library's large API surface must not expand the day's scope.
+- Once the learner understands the smallest end-to-end workflow, gradually introduce more APIs as later tasks require them. Do not front-load unnecessary knowledge.
+- Prefer accurate Java/Kotlin comparisons when explaining Python concepts, but explicitly state each analogy's limits rather than treating it as exact equivalence.
+- The learner has not used Spring. Do not assume familiarity with Spring, Controllers, or DI containers. For routing and dependency replacement, first explain ordinary function calls and the current code step by step, then introduce terminology. If the learner finds the material difficult to absorb, reduce the number of concepts introduced together rather than continuing to increase the workload as originally planned.
+- Adjust difficulty and practice volume separately. When the learner understands the concepts and reports a substantially shorter completion time, gradually restore independent implementation or edge-case exercises within the same topic. Do not keep the workload low indefinitely because the previous day was difficult. If the user requests additional practice after passing the original assignment, record the original assignment and extra review separately; do not use the additional work to retroactively mark the original assignment incomplete.
 
-## 3. 学习记录的填写规则
+## 3. Maintaining Learning Notes
 
-- `dayNN_notes.md` 的学习开始部分原则上只填写开始时间，以及必要的环境确认。
-- 不要求学习者在接触新概念之前回答尚未学习的问题。
-- 如果希望学习者带着问题学习，把问题写成“本日学习目标”或“阅读时关注点”，明确标注无需提前作答。
-- 概念理解题统一放到学习后的复盘部分，届时再要求用自己的语言回答。
-- 学习者明确要求直接提供答案并结束当天时，可以提供标注为“助手参考答案”的复盘并收尾，不再追加追问；保留原答案，将代码验收结果与概念掌握程度分开记录，不把参考答案当成学习者已独立理解的证据。下次先用一个已有案例巩固，不叠加补课。
-- 复盘题明确写出验证点、必要条件和回答形式。涉及测试时，指出具体文件和 case，提供相关输入、配置及调用顺序；未提供输入时，不要求推断具体变量名或精确结果。
-- 解释概念时定位到具体代码，区分同名标识在不同位置的作用，例如 max_text_length: int 的类型标注与 int(raw) 的转换调用。回答有歧义时先确认双方指代，不直接判为知识点未掌握。
-- 解释测试作用时，区分“某种错误实现会导致断言失败”与“测试已经定位了错误原因”。用具体输入、预期结果及错误实现的实际结果说明，不把失败断言当成根因诊断。
-- 题目条件缺失或助手解释不准确时，应明确更正，不归入学习者错题；已经通过对话澄清的内容不要求重复抄写。
-- 结束时间在完成全部学习记录和复盘后填写，放在 `dayNN_notes.md` 最后一行（最后一个非空行）；后续补充验收、错题或订正时插入其前方，保持结束时间在末尾，保留已经填写的时间值。实际用时仍由学习者自行填写，不用起止时间相减替代。
-- 已经由学习者填写的内容必须保留；调整模板时移动或整理内容，不擅自删除答案。
-- 用户明确要求记录的典型错误应追加到当天笔记的“错题本”，包含错误写法、正确写法、原因和最小示例。
+- As a rule, the opening section of `dayNN_notes.md` should contain only the start time and any necessary environment checks.
+- Do not require the learner to answer questions about concepts they have not yet encountered.
+- To guide reading with questions, label them as learning objectives or points to focus on while reading, explicitly stating that answers are not required in advance.
+- Put conceptual understanding questions in the post-learning retrospective, and ask the learner to answer in their own words at that point.
+- If the learner explicitly asks for answers and to finish the day, provide a retrospective labeled “助手参考答案” (assistant reference answers) and close out the day without further questions. Preserve the original answers, record code acceptance separately from conceptual understanding, and do not treat reference answers as evidence of independent understanding. Next time, reinforce understanding with one existing example rather than adding catch-up work.
+- Retrospective questions must specify what is being checked, the necessary conditions, and the expected answer format. For test-related questions, identify the exact file and case and provide relevant inputs, configuration, and call order. Without supplied inputs, do not require the learner to infer specific variable names or exact results.
+- Keep questions connected to the code and explanation immediately preceding them. Use the same names for the same things throughout the README, TODOs, and retrospective. Prefer concrete phrases such as "the string returned by classify_change()" over a newly introduced abstract name such as "label." If a new term is necessary, first point to the exact variable, return value, or behavior it describes and explain the connection.
+- Write code questions in this order: identify the file/function, supply the relevant input or starting state, ask for the expected return value or observable behavior, then ask what happens under one concrete change. Split distinct reasoning steps into short subquestions. Prefer "If the function returns the wrong string and the test has no assert, will the test detect it?" to an abstract "Why is a function call insufficient?" Use this structure only where relevant; do not turn every question into a long template.
+- Before publishing an exercise, read it from the learner's position: can they locate the code, identify what each noun refers to, find all necessary conditions, and tell what answer is requested without guessing an unstated connection? Fix missing links in the question itself. When wording causes confusion, update both the current exercise and the reusable rule, preserving learner answers and avoiding repeat work already clarified in conversation.
+- Anchor conceptual explanations to specific code and distinguish the roles of identically named identifiers in different contexts, such as the type annotation in `max_text_length: int` versus the conversion call `int(raw)`. If an answer is ambiguous, first clarify what each side is referring to rather than immediately concluding that the concept has not been understood.
+- When explaining tests, distinguish “a particular incorrect implementation would fail this assertion” from “the test has identified the root cause.” Use concrete inputs, expected results, and the incorrect implementation's actual results. Do not treat a failed assertion as a root-cause diagnosis.
+- Explicitly correct missing problem conditions or inaccurate assistant explanations; do not classify them as learner mistakes. Do not require the learner to copy out explanations again when they have already been clarified in conversation.
+- Fill in the end time after all learning notes and retrospective work are complete, placing it on the last non-empty line of `dayNN_notes.md`. Insert later acceptance checks, mistake entries, or corrections before that line so the end time stays last, preserving any already recorded time value. Actual study duration must still be entered by the learner; do not substitute the difference between start and end times.
+- Preserve content already written by the learner. When adjusting templates, move or reorganize that content rather than deleting answers without authorization.
+- When the user explicitly asks to record a typical mistake, append it to the day's “错题本” (mistake log), including the incorrect version, correct version, explanation, and a minimal example.
 
-## 4. TODO 与练习设计
+## 4. TODO and Exercise Design
 
-- 每个 TODO 必须在 README 中写清楚作用、输入、输出、异常或退出码、需要修改的文件，以及可验证的完成条件。
-- 如果 `run()`、CLI 入口或其他方法需要实现，README 必须明确写出处理步骤；不能只在代码中留下一个模糊 TODO。
-- 默认保留核心 TODO 让学习者独立实现，不直接填写完整答案；只有用户明确要求实现、修复或给出答案时才代写。
-- 可以提供不包含最终答案的脚手架、类型签名、测试、样例数据和小型示例。
-- 每日 README 必须按学习者实际执行顺序组织。若要求在开始学习、修改代码前测试脚手架状态，必须把该步骤放在 README 开头的开始流程中，早于阅读和 TODO，写明工作目录、可复制命令、预期通过/失败结果及失败原因；不能只在后面的验收章节或助手验证记录中提及。明确区分开始时的脚手架检查、实现中的测试和完成后的验收；若不要求学习者执行，须标明仅为助手验证记录。不得要求已完成实现的学习者回退代码补跑初始失败状态。
-- 测试应体现真实需求，而不是只追求通过数量。例如要求“不生成输出文件”时，必须在调用后断言文件不存在。
+- For every TODO, the README must specify its purpose, inputs, outputs, exceptions or exit codes, files to modify, and verifiable completion criteria.
+- If `run()`, a CLI entry point, or any other method needs to be implemented, the README must explicitly describe the processing steps. Do not leave only a vague TODO in code.
+- By default, leave core TODOs for the learner to implement independently rather than filling in complete answers. Write the implementation only when the user explicitly requests implementation, a fix, or an answer.
+- Scaffolding, type signatures, tests, sample data, and small examples are allowed as long as they do not contain the final answer.
+- Organize each daily README in the learner's actual execution order. If the learner is required to test the initial scaffold before studying or modifying code, put that step in the opening workflow, before reading and TODOs. Specify the working directory, copyable commands, expected passing/failing results, and reasons for failure. Do not mention it only in a later acceptance section or assistant verification record. Clearly distinguish initial scaffold checks, tests during implementation, and final acceptance checks. If a check is not required of the learner, label it as an assistant-only verification record. Never ask a learner who has already completed the implementation to revert code merely to reproduce the initial failing state.
+- Tests must reflect real requirements rather than just maximize passing counts. For example, a requirement not to create an output file must include an assertion after the call that the file does not exist.
 - If a test checks exception-message text or another exact output detail, state that requirement explicitly in the README; saying to preserve supplied code does not replace the contract. Treat an undocumented assertion requirement as an exercise-design omission, not a learner mistake, and clarify it without adding retroactive acceptance work.
-- 新一天应继承前一天已经验证的行为，避免为了学习新概念同时重写无关逻辑。
+- Each new day should preserve behavior verified on the previous day. Avoid rewriting unrelated logic while introducing a new concept.
+- When a day's exercise uses code from an earlier day, first copy the required code into the current day's `WeekN/dayNN/` directory. Teach, modify, and run the current-day copy rather than directly importing the implementation from an earlier day's package or editing historical files. Copy any necessary supporting project modules, tests, and sanitized sample data so the exercise does not depend on earlier-day directories; do not copy virtual environments, secrets, caches, or unrelated files. Update imports, monkeypatch targets, commands, and README links to the current-day paths, document the source day and reused behavior, and verify that the copied behavior is preserved. Keep historical code unchanged and leave today's new core TODOs for the learner to implement.
 
-## 5. 环境与运行约定
+## 5. Environment and Execution Conventions
 
-- 项目固定使用根目录 `.venv` 中的 Python 3.11，不为每个 `dayNN` 单独创建虚拟环境。
-- Python package 内的 CLI 从仓库根目录使用完整模块名运行，例如 `python -m Week2.day08.cli`；新周使用 `Week3.day15` 等前缀，以保留 package 上下文和相对导入。
-- Windows 命令需要区分 PowerShell 与 CMD/Cmder；尽量提供可直接复制的一行命令，并说明适用的 shell。
-- 新增第三方依赖时更新 `requirements-dev.txt`，并先验证根虚拟环境能够安装和导入。
+- Use Python 3.11 from the repository-root `.venv` throughout the project. Do not create separate virtual environments for individual `dayNN` directories.
+- Run CLIs within Python packages from the repository root using the full module name, for example `python -m Week2.day08.cli`. Use prefixes such as `Week3.day15` for new weeks to preserve package context and relative imports.
+- Distinguish PowerShell commands from CMD/Cmder commands on Windows. Prefer directly copyable single-line commands and identify the applicable shell.
+- When adding a third-party dependency, update `requirements-dev.txt` and first verify that it can be installed and imported in the root virtual environment.
 
-## 6. 检查与完成标准
+## 6. Verification and Completion Criteria
 
-- 用户说“完成”或“检查”时，先读取当前文件和 diff，再运行与该日对应的自动测试。
-- 日常学习日只要求运行当天测试及与变更风险相称的手动验收；此前已验收并上传的学习日不必每次全部重跑。调整包目录、导入、共享行为或周归档，或存在明确跨日回归风险时，再运行全仓测试。助手额外执行的全仓回归应与学习者必做命令分开标注。
-- 除 pytest 外，还要按风险手动验证 CLI 帮助、正常路径、错误路径、退出码、日志、文件编码和输出结构。
-- 自动测试通过但 README 的行为没有实现时，不得标记完成；需要指出测试遗漏和真实失败证据。
-- 只有全部验收条件通过后，才把当天状态改为“已完成”，并在 `学习进度.md` 记录日期、测试结果、主要收获、错题和次日复习点。
-- 脚手架中的预期失败必须在 README 中说明；不要把尚未实现的练习误报为项目故障。
+- When the user says the work is complete or asks for a check, read the current files and diff first, then run the automated tests for that day.
+- For a normal daily implementation or acceptance check, require the current day's tests and risk-appropriate manual checks; do not require the learner to rerun every completed day merely because earlier days were previously accepted and pushed. Run the full repository suite when changing package layout, imports, shared behavior, or week archives, and whenever a concrete cross-day regression risk appears. Label any full-suite run done by the assistant separately from commands required of the learner.
+- In addition to pytest, manually verify CLI help, success paths, error paths, exit codes, logs, file encoding, and output structure as appropriate to the risk.
+- Do not mark work complete if automated tests pass but behavior required by the README is missing. Identify the test coverage gap and provide evidence of the actual failure.
+- Only after all acceptance criteria pass may the day be marked “已完成” (completed). Record the date, test results, key takeaways, mistakes, and next-day review points in `学习进度.md`.
+- Document expected scaffold failures in the README. Do not misreport an unimplemented exercise as a project defect.
 
-## 7. Git 与公开仓库安全
+## 7. Git and Public Repository Safety
 
-- 这是公开学习仓库，只提交学习所需的代码、测试、说明、脱敏样例和进度记录。
-- 不提交密钥、Token、`.env`、客户资料、公司代码、真实业务数据、用户名、本机绝对路径、IDE 配置、虚拟环境或生成的临时结果。
-- 提交前运行测试、`git diff --check` 和敏感信息扫描。
-- 工作区可能包含学习者正在进行的修改。只暂存当前任务明确涉及的文件，不覆盖、不回滚、不顺带提交无关改动。
-- Day 脚手架可以作为明确标注“待完成”的练习提交；Day 完成提交必须等最终验收通过。
-- 每日学习全部验收通过、复盘与进度更新完成后，默认自动提交当天相关改动并推送到本项目已配置的 GitHub 远端，无需学习者再次提醒。提交前仍须执行测试、差异检查和敏感信息扫描，只包含本次学习及已明确授权的相关整理改动。用户明确要求暂不上传时遵从其要求。
-- 推送后核对远端分支提交与本地提交一致，并报告提交号与上传结果；若推送失败，明确区分“本地已完成/已提交”和“GitHub 未同步”，不得将本地提交误报为上传成功。
-- 用户提出可长期复用的教学或项目规则时，应更新本文件，使后续任务能够持续遵守。
-- 用户要求先审阅方案或 diff 时，先展示拟修改内容，等待确认后再落盘；本次涉及的提交与推送也等待确认，不以默认收尾规则跳过审阅。
+- This is a public learning repository. Commit only code, tests, explanations, sanitized examples, and progress records needed for learning.
+- Do not commit secrets, tokens, `.env`, client materials, company code, real business data, usernames, absolute local paths, IDE configuration, virtual environments, or generated temporary results.
+- Before committing, run tests, `git diff --check`, and a sensitive-information scan.
+- The working tree may contain the learner's in-progress changes. Stage only files explicitly relevant to the current task. Do not overwrite, revert, or include unrelated changes in a commit.
+- Daily scaffolds may be committed as exercises explicitly labeled “待完成” (pending). A day's completion commit must wait until final acceptance checks pass.
+- Once the day's learning has passed all acceptance checks and the retrospective and progress updates are complete, automatically commit that day's relevant changes and push to this project's configured GitHub remote by default, without requiring another reminder. Before committing, still run tests, diff checks, and a sensitive-information scan. Include only the current learning work and explicitly authorized related cleanup. Respect an explicit user request not to upload yet.
+- After pushing, verify that the remote branch commit matches the local commit, and report the commit ID and upload result. If pushing fails, clearly distinguish local completion/commit from GitHub remaining unsynchronized. Never report a local commit alone as a successful upload.
+- When the user introduces a reusable, long-term teaching or project rule, update this file so later tasks can continue to follow it.
+- If the user asks to review a plan or diff first, show the proposed changes and wait for confirmation before writing them. Any associated commit and push must also wait for confirmation. Do not bypass review using the default closeout rule.
 
-## 8. 沟通方式
+## 8. Communication
 
-- 默认使用中文，命令、代码标识和必要术语保留英文。
-- 先给结论和下一步操作，再补充足够理解原因的解释。
-- 报错说明要指出：失败发生在哪里、错误信息代表什么、为什么发生、最小修正是什么。
-- 不因为用户某一天未学习而叠加惩罚性补课；按现有进度继续，并在进度文件中如实记录。
-- 用户对教学方式提出异议时，优先检查任务设计本身，并把确认后的长期规则写回本文件。
+- Communicate in Chinese by default, keeping commands, code identifiers, and necessary technical terms in English.
+- Lead with the conclusion and next action, then provide enough explanation to understand the reasoning.
+- Error explanations must identify where the failure occurred, what the error message means, why it happened, and the smallest correction needed.
+- Do not add punitive catch-up work because the user missed a study day. Continue from the existing progress and record the situation accurately in the progress file.
+- When the user challenges the teaching approach, inspect the task design itself first and write confirmed long-term rules back into this file.
 
-## 9. Cmder 学习过程日志分析
+## 9. Analyzing Cmder Learning-Process Logs
 
-- 用户希望后续验收和复盘时结合 Cmder 输入输出日志，观察真实学习过程，而不只检查最终代码和最终一次测试结果。
-- 实际学习用时以学习者在笔记中自行填写的时长为准。即使日志含完整时间标记，也不得用会话跨度、命令间隔或开始/结束时间差替代实际用时，因为期间可能有其他事务或中断；未填写则记为“未记录”。日志仅辅助分析命令、错误和修正过程。
-- 当用户要求检查当天完成情况或分析学习过程时，在用户已授权且日志可用的前提下，读取 `%CMDER_ROOT%\Logs\ConEmu-*.log`；只分析与当前学习项目、当前 Day 和相关时间段有关的内容。
-- Cmder 提示符中的结构化标记格式为 `[CMD_META time=YYYY-MM-DD HH:MM:SS previous_exit=N cwd=PATH]`。该标记出现在下一条命令输入前，其中 `previous_exit` 对应上一条已经执行完成的命令；会话中的第一个标记没有可对应的上一条学习命令。
-- 将相邻两个 `CMD_META` 标记之间的内容视为一次命令尝试：前一个标记给出开始输入的大致时间和工作目录，后一个标记给出上一条命令的退出码及结束时间上界。日志末尾没有后续标记时，不要把该命令误判为已完成。
-- 复盘应尽量还原：运行了哪些命令、哪些测试 case 失败、核心错误信息、每轮失败数量变化、经过几次执行才通过、是否重复出现相同错误，以及哪些知识点需要次日复习。
-- `exit=0` 不能单独证明业务行为正确，仍需结合命令输出、README 验收条件、当前代码、Git diff 和手动验证结果判断；非零退出码也要结合具体程序解释，不能一律归类为同一种错误。
-- 日志只能证明终端中的命令和输出，不能证明编辑器内的具体修改过程或学习者当时的思考；无法由日志直接确认的内容必须标为推断或未知。
-- 如果确认某个典型错误反复出现，应按本文件第 3 节规则整理到当天笔记的“错题本”；不要因为正常探索次数较多而把当天评价为失败。
-- 日志可能包含 Token、密码、客户资料或其他敏感内容。分析时不得在回复、学习笔记、进度文件或公开仓库中复述、保存或提交这些内容；发现疑似敏感信息时只报告其存在和建议处理方式。
+- The user wants future acceptance checks and retrospectives to incorporate Cmder input/output logs to understand the actual learning process, rather than checking only the final code and last test run.
+- Use the study duration entered by the learner in their notes as the authoritative actual study time. Even if logs contain complete timestamps, do not substitute session spans, intervals between commands, or start/end time differences, because other activities or interruptions may occur in between. If no duration was entered, record it as “未记录” (not recorded). Logs are only supporting evidence for commands, errors, and the correction process.
+- When the user requests a check of the day's completion or an analysis of the learning process, read `%CMDER_ROOT%\Logs\ConEmu-*.log` only if the user has authorized access and logs are available. Analyze only content relevant to the current learning project, day, and time period.
+- Structured markers in Cmder prompts use the format `[CMD_META time=YYYY-MM-DD HH:MM:SS previous_exit=N cwd=PATH]`. A marker appears before the next command is entered; `previous_exit` refers to the preceding command that has already completed. The first marker in a session has no corresponding preceding learning command.
+- Treat the content between consecutive `CMD_META` markers as one command attempt. The earlier marker provides the approximate input start time and working directory; the later marker provides the preceding command's exit code and an upper bound on its end time. If there is no following marker at the end of the log, do not mistakenly conclude that the command has completed.
+- As far as the evidence permits, reconstruct which commands ran, which test cases failed, the main error messages, how failure counts changed between runs, how many executions were needed to pass, whether the same mistakes recurred, and which concepts need review the next day.
+- `exit=0` alone does not prove correct business behavior. Also consider command output, README acceptance criteria, current code, Git diff, and manual verification results. Interpret nonzero exit codes in the context of the specific program; do not classify all of them as the same kind of error.
+- Logs can establish terminal commands and output, but not specific edits made in the editor or what the learner was thinking. Label anything not directly established by the logs as an inference or unknown.
+- If a recurring typical mistake is confirmed, record it in that day's “错题本” (mistake log) according to Section 3. Do not judge the day a failure merely because normal exploration took many attempts.
+- Logs may contain tokens, passwords, client materials, or other sensitive information. Do not repeat, save, or commit such content in replies, learning notes, progress files, or the public repository. If potentially sensitive information is found, report only its presence and recommended handling.

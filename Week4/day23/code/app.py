@@ -43,5 +43,5 @@ def analyze_batch(
         validate_task_ids(tasks)
     except ValueError as e:
         raise HTTPException(status_code=422, detail={"code": "DUPLICATE_TASK_ID", "message": "duplicate task_id"})
-    rows=run_batch(tasks,runtime.gateway_factory,max_attempts=request.max_attempts,sleeper=runtime.sleeper)
+    rows = run_batch(tasks, runtime.gateway_factory, max_attempts=request.max_attempts, sleeper=runtime.sleeper)
     return make_response(rows)

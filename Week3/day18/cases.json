@@ -1,0 +1,8 @@
+{
+  "id": "D",
+  "text": "注文一覧をCSVで出力することは決定済みです。出力を3秒以内に完了する案は候補ですが、まだ合意していません。3秒以内を正式な受入条件にするか担当者に確認してください。",
+  "must_contain": {"functions": ["注文一覧", "CSV"], "questions": ["3秒", "確認"]},
+  "must_be_empty": ["acceptance_criteria", "risks", "unknown"],
+  "fixture_source": "synthetic teaching failure; not a recorded model response",
+  "raw": "{\"functions\":[\"注文一覧をCSVで出力する\"],\"acceptance_criteria\":[\"3秒以内に完了する\"],\"risks\":[],\"questions\":[],\"unknown\":[]}"
+}
