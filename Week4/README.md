@@ -6,5 +6,7 @@ Week 按每七个学习日分组，不按自然周。Week3 文件已在对应目
 - [Day22 学习记录](./day22/day22_notes.md)
 - [Day23：把批处理接到 FastAPI](./day23/README.md)
 - [Day23 学习记录](./day23/day23_notes.md)
+- [Day24：给批处理 API 加一个浏览器页面](./day24/README.md)
+- [Day24 学习记录](./day24/day24_notes.md)
 
-当前状态以根目录 [学习进度](../学习进度.md) 为准。继续使用根 .venv Python 3.11，从仓库根运行 `Week4.day23.code` 模块。开始或续学时先读 AGENTS、路线、进度、当天 README 和笔记并检查 Git 状态。
+当前状态以根目录 [学习进度](../学习进度.md) 为准。继续使用根 .venv Python 3.11，从仓库根运行当天模块；Day24 页面按其 README 使用 Streamlit 启动。开始或续学时先读 AGENTS、路线、进度、当天 README 和笔记并检查 Git 状态。
