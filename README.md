@@ -38,6 +38,7 @@
   - [Day 23：把批处理接到 FastAPI](./Week4/day23/README.md)
   - [Day 24：给批处理 API 加一个浏览器页面](./Week4/day24/README.md)
   - [Day 25：在页面显示前校验 API 报告](./Week4/day25/README.md)
+  - [Day 26：显式选择本地模拟或真实模型](./Week4/day26/README.md)
 
 ## 文件职责
 
