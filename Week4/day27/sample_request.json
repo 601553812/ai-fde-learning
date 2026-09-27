@@ -1,0 +1,7 @@
+{
+  "tasks": [
+    {"task_id": "A", "text": "CSV出力"},
+    {"task_id": "B", "text": "検索"}
+  ],
+  "max_attempts": 1
+}
