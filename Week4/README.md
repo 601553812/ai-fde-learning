@@ -14,5 +14,7 @@ Week 按每七个学习日分组，不按自然周。Week3 文件已在对应目
 - [Day26 学习记录](./day26/day26_notes.md)
 - [Day27：检查模型原文的结构与内容](./day27/README.md)
 - [Day27 学习记录](./day27/day27_notes.md)
+- [Day28：逐任务审查批处理结果](./day28/README.md)
+- [Day28 学习记录](./day28/day28_notes.md)
 
 当前状态以根目录 [学习进度](../学习进度.md) 为准。继续使用根 .venv Python 3.11，从仓库根运行当天模块；当天页面按其 README 使用 Streamlit 启动。开始或续学时先读 AGENTS、路线、进度、当天 README 和笔记并检查 Git 状态。

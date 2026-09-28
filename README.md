@@ -40,6 +40,7 @@
   - [Day 25：在页面显示前校验 API 报告](./Week4/day25/README.md)
   - [Day 26：显式选择本地模拟或真实模型](./Week4/day26/README.md)
   - [Day 27：检查模型原文的结构与内容](./Week4/day27/README.md)
+  - [Day 28：逐任务审查批处理结果](./Week4/day28/README.md)
 
 ## 文件职责
 
