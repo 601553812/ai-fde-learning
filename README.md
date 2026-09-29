@@ -42,6 +42,9 @@
   - [Day 27：检查模型原文的结构与内容](./Week4/day27/README.md)
   - [Day 28：逐任务审查批处理结果](./Week4/day28/README.md)
 
+- [Week 5（Day 29～35）](./Week5/README.md)
+  - [Day 29：给文档切块并保留出处](./Week5/day29/README.md)
+
 ## 文件职责
 
 - AGENTS.md：长期协作、教学与验收规则。
