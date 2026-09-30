@@ -44,6 +44,7 @@
 
 - [Week 5（Day 29～35）](./Week5/README.md)
   - [Day 29：给文档切块并保留出处](./Week5/day29/README.md)
+  - [Day 30：按问题检索已切好的片段](./Week5/day30/README.md)
 
 ## 文件职责
 

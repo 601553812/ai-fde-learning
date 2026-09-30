@@ -4,5 +4,7 @@ Week 按每七个学习日分组，不按自然周。Week4 的 Day22～28 已在
 
 - [Day29：给文档切块并保留出处](./day29/README.md)
 - [Day29 学习记录](./day29/day29_notes.md)
+- [Day30：按问题检索已切好的片段](./day30/README.md)
+- [Day30 学习记录](./day30/day30_notes.md)
 
 当前完成状态以根目录 [学习进度](../学习进度.md) 为准。从仓库根目录使用 Python 3.11 `.venv` 运行本周模块。
