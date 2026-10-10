@@ -47,6 +47,7 @@
   - [Day 30：按问题检索已切好的片段](./Week5/day30/README.md)
   - [Day 31：把检索片段整理成带出处的有限上下文](./Week5/day31/README.md)
   - [Day 32：用检索资料组织一次问答调用](./Week5/day32/README.md)
+  - [Day 33：检查回答中的引用编号](./Week5/day33/README.md)
 
 ## 文件职责
 
