@@ -53,6 +53,7 @@ This file applies to the repository root, archived `WeekNN/dayNN/` directories, 
 ## 4. TODO and Exercise Design
 
 - For every TODO, the README must specify its purpose, inputs, outputs, exceptions or exit codes, files to modify, and verifiable completion criteria.
+- When an exercise requires imports, show the concrete submodule paths for the supplied classes and functions. Distinguish importing from a module file from importing names exposed by a package's __init__.py; do not imply that learners must configure package exports when direct submodule imports are sufficient.
 - If `run()`, a CLI entry point, or any other method needs to be implemented, the README must explicitly describe the processing steps. Do not leave only a vague TODO in code.
 - By default, leave core TODOs for the learner to implement independently rather than filling in complete answers. Write the implementation only when the user explicitly requests implementation, a fix, or an answer.
 - Scaffolding, type signatures, tests, sample data, and small examples are allowed as long as they do not contain the final answer.

@@ -49,6 +49,7 @@
   - [Day 32：用检索资料组织一次问答调用](./Week5/day32/README.md)
   - [Day 33：检查回答中的引用编号](./Week5/day33/README.md)
   - [Day 34：真实资料问答与人工依据核查](./Week5/day34/README.md)
+  - [Day 35：把回答里的编号对应到原资料](./Week5/day35/README.md)
 
 ## 文件职责
 
