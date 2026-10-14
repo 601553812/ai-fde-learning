@@ -51,6 +51,9 @@
   - [Day 34：真实资料问答与人工依据核查](./Week5/day34/README.md)
   - [Day 35：把回答里的编号对应到原资料](./Week5/day35/README.md)
 
+- [Week 6（Day 36～42）](./Week6/README.md)
+  - [Day 36：记录并汇总人工依据核查](./Week6/day36/README.md)
+
 ## 文件职责
 
 - AGENTS.md：长期协作、教学与验收规则。
