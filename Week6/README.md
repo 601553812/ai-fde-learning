@@ -4,5 +4,7 @@ Week 按每七个学习日分组，不按自然周。Week5 的 Day29～35 已在
 
 - [Day36：记录并汇总人工依据核查](./day36/README.md)
 - [Day36 学习记录](./day36/day36_notes.md)
+- [Day37：固定问题集与期望证据检查](./day37/README.md)
+- [Day37 学习记录](./day37/day37_notes.md)
 
 当前完成状态以根目录 [学习进度](../学习进度.md) 为准。从仓库根目录使用 Python 3.11 `.venv` 运行本周模块。
