@@ -54,6 +54,7 @@
 - [Week 6（Day 36～42）](./Week6/README.md)
   - [Day 36：记录并汇总人工依据核查](./Week6/day36/README.md)
   - [Day 37：固定问题集与期望证据检查](./Week6/day37/README.md)
+  - [Day 38：用固定问题集验证一次检索改善](./Week6/day38/README.md)
 
 ## 文件职责
 
